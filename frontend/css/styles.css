@@ -1,0 +1,266 @@
+/* Global CSS Variables */
+:root {
+    /* Font Families */
+    --font-primary: 'Poppins', sans-serif;
+    
+    /* Colors */
+    --color-main: #026c6b; /* Main theme color */
+    --color-primary: #866304; /* Primary theme color */
+    --color-white: #ffffff; /* White */
+    --color-black: #000000; /* Black */
+
+    /* Font Sizes (for responsive design) */
+    --font-size-base: 16px;
+    --font-size-lg: 24px;
+    --font-size-sm: 14px;
+    --font-size-xl: 36px;
+}
+
+/* Apply Poppins font globally */
+* {
+    font-family: var(--font-primary);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+/* Body text */
+body {
+    font-size: var(--font-size-base);
+    color: var(--color-black); /* Set default font color to black */
+    background-color: var(--color-white); /* Set background to white */
+    line-height: 1.5;
+}
+
+h1 {
+    font-size: var(--font-size-xl); /* Large size for main headings */
+}
+
+h2 {
+    font-size: var(--font-size-lg);
+}
+
+h3 {
+    font-size: var(--font-size-lg);
+}
+
+h4 {
+    font-size: var(--font-size-base);
+}
+
+h5, h6 {
+    font-size: var(--font-size-sm);
+}
+
+/* Responsive typography */
+@media (max-width: 768px) {
+    :root {
+        --font-size-base: 14px;
+        --font-size-lg: 20px;
+        --font-size-sm: 12px;
+        --font-size-xl: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    :root {
+        --font-size-base: 12px;
+        --font-size-lg: 18px;
+        --font-size-sm: 10px;
+        --font-size-xl: 24px;
+    }
+}
+
+
+#first-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 35px;
+    background-color: var(--color-main);
+    color: white;
+    font-size: 0.75rem;
+    padding: 0 5%; /* Horizontal padding to add spacing from the edges */
+}
+
+.contact-info {
+    display: flex;
+    gap: 15px; /* Space between email, phone */
+    flex-wrap: wrap;
+}
+
+.contact-item i {
+    font-size: 15px;
+    margin-right: 5px; /* Space between icon and text */
+}
+
+.contact-item a {
+    color: white;
+}
+
+.social-links a i {
+    font-size: 25px; /* Facebook icon size */
+    color: #ffffff;
+}
+
+.social-links {
+    display: flex;
+    justify-content: flex-end;
+}
+
+#first-nav .contact-item span, #first-nav .social-links a {
+    vertical-align: middle; /* Aligning the text and icons vertically */
+}
+
+/* When screen size reduces, stack email and phone number */
+@media (max-width: 768px) {
+    .contact-info {
+        flex-direction: column; /* Stack contact items vertically */
+        gap: 2px; /* Reduced space between email and phone */
+    }
+
+    /* Adjust font size and icon sizes for mobile */
+    #first-nav {
+        font-size: 10px; /* Adjust font size for mobile */
+    }
+
+    .contact-item i {
+        font-size: 12px; /* Adjust icon size */
+    }
+
+    .contact-item {
+        font-size: 10px; /* Adjust text size */
+    }
+
+    .social-links a i {
+        font-size: 18px; /* Adjust social icon size */
+    }
+}
+
+/* Very Small Screens (e.g., Phones) */
+@media (max-width: 480px) {
+    #first-nav {
+        font-size: 9px; /* Even smaller font size for very small screens */
+    }
+
+    .contact-item {
+        font-size: 9px;
+    }
+
+    .contact-item i {
+        font-size: 10px;
+    }
+
+    .social-links a i {
+        font-size: 16px;
+    }
+}
+
+
+
+#second-nav {
+    padding: 10px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--color-white); /* Use your main color variable */
+    position: relative;
+    height: 84px;
+}
+
+#second-nav ul {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+
+#second-nav ul li {
+    list-style-type: none;
+}
+
+#second-nav ul li a {
+    text-decoration: none;
+    color: var(--color-black);
+    font-weight: 500;
+}
+
+.menu-icon {
+    display: none;
+}
+
+.menu-icon i {
+    color: var(--color-black);
+    font-size: 30px;
+}
+
+
+/* Logo Styling */
+.logo {
+    flex: 1;
+}
+
+.logo-img {
+    width: 100%; /* Make logo width responsive */
+    max-width: 240px; /* Set a max-width to ensure it doesn't stretch too large */
+    height: auto; /* Keep the aspect ratio */
+    padding-top: 0px;
+}
+
+/* Adjust the logo size for smaller screens */
+@media (max-width: 768px) {
+    .logo-img {
+        max-width: 120px; /* Reduce size slightly on tablets */
+    }
+}
+
+@media (max-width: 480px) {
+    .logo-img {
+        max-width: 100px; /* Further reduce size on small mobile screens */
+    }
+}
+
+
+#menu-list li a.active {
+    color: var(--color-primary); /* Primary color for active link */
+}
+
+/* Styling for all links */
+#menu-list li a {
+    text-decoration: none;
+    color: white; /* Default link color */
+    transition: color 0.3s ease; /* Smooth color transition on hover */
+}
+
+/* Hover effect for non-active links */
+#menu-list li a:hover {
+    color: var(--color-primary); /* Primary color on hover */
+}
+
+@media (max-width: 600px) {
+    #second-nav ul {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        text-align: center;
+        background: var(--color-white); /* Use your main color variable */
+        gap: 0;
+        overflow: hidden;
+    }
+
+    #second-nav ul li {
+        padding: 20px;
+        padding-top: 0;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+
+    #menu-list {
+        transition: all 0.5s;
+    }
+}

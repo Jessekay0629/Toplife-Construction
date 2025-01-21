@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Toplife Construction Zambia</title>
+    <!-- Poppins font from Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel= "stylesheet" href= "https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css" >
+    <!-- Link to your CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" type="image/png" href="assets/images/logo.png">
+</head>
+<body>
+
+<!-- First Navigation Bar ------------------------------------------------------------------------------------->
+    <nav id="first-nav">
+        <div class="contact-info">
+            <div class="contact-item">
+                <i class="la la-envelope"></i>
+                <span>toplifeprise@gmail.com</span>
+            </div>
+            <div class="contact-item">
+                <a href="tel:+260964729745">
+                    <i class="la la-phone"></i>
+                    <span>+260964729745</span>
+                </a>
+            </div>
+        </div>
+        <div class="social-links">
+            <a href="https://web.facebook.com/ToplifeZambia" target="_blank">
+                <i class="lab la-facebook-square"></i>
+            </a>
+        </div>
+    </nav>
+    
+<!-- Second Navigation Bar --------------------------------------------------------------------------------------->
+<nav id="second-nav">
+    <div class="logo">
+        <img src="assets/images/logo-trans-com.png" alt="Company Logo" class="logo-img">
+    </div>
+    
+    <ul id="menu-list">
+        <li><a href="" class="active">Home</a></li>
+        <li><a href="">About us</a></li>
+        <li><a href="">Services</a></li>
+        <li><a href="">Projects</a></li>
+        <li><a href="">Contact</a></li>
+    </ul>
+    <div class="menu-icon">
+        <i class="las la-bars" onclick="toggleMenu()"></i>
+    </div>
+</nav>
+
+
+    <script>
+        let menuList = document.getElementById("menu-list")
+        menuList.style.maxHeight = "0px";
+
+        function toggleMenu(){
+            if(menuList.style.maxHeight == "0px")
+            {
+                menuList.style.maxHeight = "300px";
+            }
+            else{
+                menuList.style.maxHeight = "0px";
+            }
+        }
+        
+    </script>
+
+</body>
+</html>
