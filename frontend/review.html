@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>About Us | Toplife Construction Zambia</title>
+    <title>Reviews | Toplife Construction Zambia</title>
     <!-- Poppins font from Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel= "stylesheet" href= "https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css" >
@@ -49,7 +49,7 @@
     
     <ul id="menu-list">
         <li><a href="">Home</a></li>
-        <li><a href="" class="active">About us</a></li>
+        <li><a href="">About us</a></li>
         <li><a href="">Services</a></li>
         <li><a href="">Projects</a></li>
         <li><a href="">Contact</a></li>
@@ -63,63 +63,47 @@
 <!-- Page title --------------------------------------------------------------------------------------->
 <section class="page-title">
     <div class="content">
-        <h1>About Us</h1>
+        <h1>Review</h1>
         <div class="breadcrumb">
-            <a href="index.html">Home</a> / About Us
+            <a href="index.html">Home</a> / Review
         </div>
     </div>
   </section>
 
-<!-- About Us Page ---------------------------------------------------------------------------------->
-
-<section class="about-us">
-    <div class="about-container">
-        <div class="intro">
-            <h2>Welcome to Toplife Construction</h2>
-            <br>
-            <p>
-                Toplife is a leading construction company with years of experience in delivering high-quality construction services. We are committed to excellence and dedicated to exceeding our clients' expectations.
-            </p>
-            <br>
-            <p>
-                In the coming years, we foresee ourselves expanding the richness and scope of the company to the global scene in the provision of excellence in the construction industry. We are committed to expanding our construction services and products to a broader market and influence in the industry.
-            </p>
+<!-- Review --------------------------------------------------------------------------------------->
+  <div class="review-form-container">
+    <h2>Leave a Review</h2>
+    <form class="review-form">
+      <div class="form-row">
+        <div class="half-width">
+          <label for="name"> Full Name</label>
+          <input type="text" id="name" name="name" required placeholder="Your Name">
         </div>
-        <div class="mission-vision">
-            <div class="mission">
-                <h2>Our Mission</h2>
-                <br>
-                <p>Our mission is to deliver a high-quality level of construction services and products that will give satisfaction to our clients. We aim to do so by being professional, creative, committed, honest and passionate in order to offer only the best services our clients would wish to have.</p>
-            </div>
-            <div class="vision">
-                <h2>Our Vision</h2>
-                <br>
-                <p>Our vision is to be a worlds-class building and construction services provider. We envision to be the preferred building and construction company offering high quality services in the industry, and a company that every highly sought for professional would want to work with.</p>
-            </div>
+        <div class="half-width">
+          <label for="company-name">Company Name</label>
+          <input type="text" id="company-name" name="company-name" required placeholder="Company Name">
         </div>
-        
-        <!-- Meet Our Team Section -->
-        <section class="meet-our-team">
-            <div class="container">
-                <h2>Meet Our Team</h2>
-                <div class="team-grid" id="team-container">
-                    <!-- Team members will be injected here via JavaScript -->
-                </div>
-            </div>
-        </section>
-        
-        
-        
-        <div class="contact-us-btn">
-            <a href="contact.html" class="contact-btn">Contact Us</a>
-        </div>
-    </div>
-</section>
-
-
+      </div>
   
+      <div class="form-row">
+        <div class="full-width">
+          <label for="title">Company title / Position</label>
+          <input type="text" id="title" name="title" required placeholder="Your Title or Position">
+        </div>
+      </div>
+  
+      <div class="form-row">
+        <div class="full-width">
+          <label for="review">Review</label>
+          <textarea id="review" class="review-textarea" name="review" required placeholder="Write your review here..."></textarea>
+        </div>
+      </div>
+  
+      <button type="submit" class="submit-btn">Submit</button>
+    </form>
+  </div>
 
-<!-- Footer --------------------------------------------------------------------------------------->
+  <!-- Footer --------------------------------------------------------------------------------------->
 <footer>
     <div class="footer-container">
         <div class="footer-rows">
@@ -159,7 +143,7 @@
                   <h3>Contact</h3>
                   <div class="contact-details">
                     <i class="las la-map-marked"></i>
-                    <p>2425A Leopards Hill Road - New Kasama, Lusaka, Zambia</p>
+                    <p>Plot 26008 ,off kwacha Road Olympia Lusaka 10101 Lusaka, Zambia</p>
                   </div>
                   <br>
                   <br>

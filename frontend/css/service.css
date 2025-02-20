@@ -1,0 +1,651 @@
+:root {
+    /* Font Families */
+    --font-primary: 'Poppins', sans-serif;
+    
+    /* Colors */
+    --color-main: #026c6b; /* Main theme color */
+    --color-primary: #866304; /* Primary theme color */
+    --color-white: #ffffff; /* White */
+    --color-black: #000000; /* Black */
+}
+
+
+* {
+    font-family: 'Poppins';
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+*::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+/*************************************** First (#1) Navigation ***************************************/
+
+#first-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    min-height: 35px;
+    box-sizing: border-box;
+    background-color: var(--color-main);
+    color: white;
+    font-size: 0.75rem;
+    padding: 0 9%; /* Horizontal padding to add spacing from the edges */
+    position: relative;
+    z-index: 10;
+}
+
+.contact-info {
+    display: flex;
+    gap: 15px; /* Space between email, phone */
+    flex-wrap: wrap;
+}
+
+.contact-item {
+    display: flex; /* Make the container a flex container */
+    align-items: center;
+}
+
+.contact-item i {
+    font-size: 20px; /* Base size for icons */
+    margin-right: 2px; /* Remove any additional margin if present */
+    line-height: 1; /* Space between icon and text */
+}
+
+.contact-item i.la-phone {
+    transform: translateY(2px); /* Fine-tune vertical alignment */
+}
+
+.contact-item span {
+    font-size: 13px; /* Base size for span text */
+}
+
+.contact-item a {
+    color: white;
+    text-decoration: none;
+}
+
+.social-links a i {
+    font-size: 30px; /* Facebook icon size */
+    color: #ffffff;
+}
+
+.social-links {
+    display: flex;
+    justify-content: flex-end;
+}
+
+#first-nav .contact-item span, #first-nav .social-links a {
+    vertical-align: middle; /* Aligning text and icons vertically */
+}
+
+
+@media (max-width: 768px) {
+    .contact-info {
+        flex-direction: column; /* Stack contact items vertically */
+        gap: 2px; /* Add space between stacked items */
+    }
+
+}
+
+/*************************************** Second (#2) Navigation ***************************************/
+    
+#second-nav {
+    padding: 1% 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--color-white); 
+    position: relative;
+    z-index: 5;
+    height: 84px;
+    flex-wrap: nowrap;
+}
+
+#second-nav ul {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+
+#second-nav ul li {
+    list-style-type: none;
+}
+
+#second-nav ul li a {
+    text-decoration: none;
+    color: var(--color-black);
+    font-weight: 500;
+}
+
+#second-nav a {
+    white-space: nowrap; /* Prevent text from wrapping */
+    text-align: center; /* Keep text aligned properly */
+}
+
+.menu-icon {
+    display: none;
+}
+
+.menu-icon i {
+    color: var(--color-black);
+    font-size: 30px;
+}
+
+
+/* Logo Styling */
+.logo {
+    display: flex; /* Makes sure the content aligns inside */
+    align-items: center; /* Aligns vertically */
+    padding-top: 2%; /* Adds top padding */
+    padding-bottom: 1vh;
+}
+
+.logo-img {
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    width: 100%; /* Make logo width responsive */
+    max-width: 250px; /* Set a max-width to ensure it doesn't stretch too large */
+    height: auto; /* Keep the aspect ratio */
+}
+
+@media (max-width: 768px) {
+   
+    .menu-icon {
+        padding: 1% 9%;
+    }
+
+    #second-nav {
+        padding: 0
+    }
+
+    .logo-img {
+        max-width: 270px; /* Reduce size slightly on tablets */
+    }
+}
+
+@media (max-width: 480px) {
+    .logo-img {
+        max-width: 200px; /* Further reduce size on small mobile screens */
+    }
+}
+
+
+#menu-list li a.active {
+    color: var(--color-primary); /* Primary color for active link */
+}
+
+#menu-list li a {
+    text-decoration: none;
+    color: white; /* Default link color */
+    transition: color 0.3s ease; /* Smooth color transition on hover */
+}
+
+/* Hover effect for non-active links */
+#menu-list li a:hover {
+    color: var(--color-primary); /* Primary color on hover */
+}
+
+@media (max-width: 768px) {
+    
+    #second-nav ul {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        text-align: center;
+        background: var(--color-white); /* Use your main color variable */
+        gap: 0;
+        overflow: hidden;
+    }
+
+    #second-nav ul li {
+        padding: 20px;
+        padding-top: 0;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+
+    #menu-list {
+        transition: all 0.5s;
+    }
+}
+
+/* Page title Section styles *************************************************************************************/
+
+.page-title {
+    position: relative;
+    padding: 100px 0; /* Adjust the padding as needed */
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    color: #fff;
+    overflow: hidden;
+    background-image: url('../assets/images/us.jpeg'); /* Change this to your background image */
+   
+}
+
+.page-title::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Dark overlay */
+    z-index: 1;
+}
+
+.page-title .content {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.page-title h1 {
+    font-size: 48px;
+    margin: 0 0 10px;
+    color: #038886; /* Adjust as needed */
+}
+
+.page-title .breadcrumb {
+    font-size: 18px;
+    color: #fff;
+}
+
+.page-title .breadcrumb a {
+    color: #038886; /* Link color */
+    text-decoration: none;
+}
+
+.page-title .breadcrumb a:hover {
+    text-decoration: underline;
+}
+
+/* Service Section styles *************************************************************************************/
+.project-container {
+    padding: 80px;
+    border-radius: 8px;
+}
+
+/* Project Header */
+.project-header {
+    display: grid;
+    grid-template-columns: 3fr 1fr; /* Keeps image wider */
+    align-items: start; /* Aligns text to the top */
+    margin-bottom: 40px;
+}
+
+.project-image {
+    width: 85%; 
+    height: 400px;
+    overflow: hidden; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures proper cropping */
+}
+
+.project-details {
+    justify-self: end; /* Pushes the details to the far right */
+    max-width: 100%; /* Allows it to take full available space */
+    text-align: left;
+    margin-right: 50px;
+}
+
+.project-details li {
+    line-height: 2.5;
+}
+
+.project-details h1 {
+   
+    margin-bottom: 10px;
+    color: #038886;
+    white-space: nowrap;
+    overflow-wrap: break-word;
+}
+
+.project-details ul {
+    list-style: none;
+    padding: 0;
+    gap: 10px;
+}
+
+.project-details ul li {
+    font-size: 1rem;
+    margin-bottom: 8px;
+}
+
+/* Project Overview */
+.project-overview {
+    margin-bottom: 50px;
+}
+
+.project-overview h1 {
+    margin-bottom: 10px;
+    color: #038886;
+}
+
+.project-overview p {
+    text-align: justify;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #666;
+}
+
+/* Image Carousel */
+.project-carousel {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+    padding: 0 20px; /* Add padding to prevent elements from touching the edges */
+}
+
+.carousel-images {
+    display: flex;
+    overflow: hidden;
+    width: 95%; /* Increased width */
+    gap: 10px; /* Adds spacing between images */
+    justify-content: center;
+}
+
+.carousel-images img {
+    width: 32%; /* Adjusted so three images fit with spacing */
+    height: 250px; /* Maintain a fixed height */
+    object-fit: cover;
+    border-radius: 6px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.carousel-btn {
+    background: #038886;
+    color: white;
+    border: none;
+    width: 50px;  /* Equal width & height to make it circular */
+    height: 50px; 
+    cursor: pointer;
+    border-radius: 50%; /* Ensures it's perfectly round */
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s ease;
+}
+
+.carousel-btn:hover {
+    background: #026c6c;
+}
+
+
+/* Client Testimonial */
+.project-testimonial {
+    text-align: center;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 6px;
+}
+
+.project-testimonial h2 {
+    font-size: 1.9rem;
+    color: #038886;
+}
+
+.project-testimonial p {
+    font-size: 1rem;
+    font-style: italic;
+    color: #555;
+}
+
+.project-testimonial span {
+    display: block;
+    font-size: 1rem;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+/* On small screens */
+@media (max-width: 768px) {
+    .project-header {
+        grid-template-columns: 1fr; /* Stacks the content vertically */
+    }
+
+    .project-image {
+        width: 100%; /* Takes up full width */
+        height: 250px; /* Adjust image height for smaller screens */
+    }
+
+    .project-details {
+        justify-self: start; /* Centers the details below the image */
+        margin-right: 0; /* Removes right margin */
+        padding: 20px; /* Adds padding for spacing */
+    }
+
+    .project-details h1 {
+        font-size: 1.25rem; /* Adjust font size for smaller screens */
+        margin-bottom: 15px;
+    }
+
+    .project-details ul li {
+        font-size: 0.9rem; /* Smaller text size for better fit */
+    }
+}
+
+/* General Responsive Fixes */
+@media screen and (max-width: 1024px) {
+    .project-container {
+        padding: 50px; /* Reduce padding for smaller screens */
+    }
+    
+    .project-details {
+        width: 220px;
+    }
+
+    .project-details h1 {
+        font-size: 1.5rem;
+    }
+
+    .carousel-images {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .carousel-images img {
+        width: 100%; /* Ensure images fit on smaller screens */
+        height: auto;
+    }
+
+    .carousel-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .project-container {
+        padding: 30px;
+    }
+
+    .carousel-images {
+        width: 100%;
+    }
+
+    .carousel-btn {
+        width: 35px;
+        height: 35px;
+        font-size: 1rem;
+    }
+
+    .project-testimonial {
+        padding: 15px;
+    }
+
+    .project-testimonial h2 {
+        font-size: 1.5rem;
+    }
+
+    .project-testimonial p {
+        font-size: 0.9rem;
+    }
+}
+
+
+  
+/* footer Section styles *************************************************************************************/
+
+footer{
+    background-color: #000000ff;
+    position: relative;
+    width: 100%;
+    min-height: 350px;
+    padding: 3rem 1rem;
+  }
+  
+  .footer-container {
+   max-width: 1140px;
+   margin: 0 auto;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+  
+  
+  }
+  .footer-rows {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+  }
+  
+  .footer-col{
+   min-width: 250px;
+   color:#f2f2f2f2;
+   font-family: poppins;
+   padding:0 2rem;
+  }
+  
+  .footer-col .logo2{
+   width: 240px;
+   
+  }
+  
+  .footer-col h3{
+   color: #038886;
+   margin-bottom: 20px;
+   position: relative;
+   cursor: pointer;
+  }
+  
+  .footer-col h3::after{
+   content: '';
+   height:3px;
+   width:0px;
+   background-color: #038886;
+   position: absolute;
+   bottom: 0;
+   left:0;
+   transition: 0.3s ease;
+  }
+  
+  .footer-col h3:hover::after{
+   width:30px
+  }
+  
+  .footer-col .social a i{
+   color: #038886;
+   margin-top:2rem;
+   margin-right: 5px;
+   font-size: 30px;
+   transition: 0.3s ease;
+  }
+  
+  .footer-col .social a i:hover{
+   transform: scale(1.5);
+   filter:grayscale(25);
+  }
+  
+  .footer-col .links a{
+   display: block;
+   text-decoration: none;
+   color:#f2f2f2;
+   margin-bottom: 5px;
+   position: relative;
+   transition: 0.3s ease;
+  }
+  
+  .footer-col .links a::before{
+   content:'';
+   height: 16px;
+   width:3px;
+   position: absolute;
+   top:5px;
+   left:-10px;
+   background-color: #038886;
+   transition: 0.5s ease;
+   opacity: 0;
+  }
+  
+  .footer-col .links a:hover::before{
+   opacity: 1;
+  }
+  
+  .footer-col .links a:hover{
+   transform: translateX(-8px);
+   color: #038886;
+  }
+  
+  .footer-col .contact-details{
+   display: inline-flex;
+   justify-content: space-between;
+  }
+  
+  .footer-col .contact-details i{
+   margin-right:15px;
+   display: block;
+   font-size: 30px;
+   color: #038886;
+  }
+  
+  /********** Responsive Design ********/
+  @media(max-width:900px)
+  {
+  .footer-rows{
+   flex-direction: column;
+  }
+  .footer-col{
+   width: 100%;
+   text-align: left;
+   margin-bottom: 25px;
+  }
+  }
+  @media(max-width:768px)
+  {
+  .footer-rows{
+   flex-direction: column;
+  }
+  .footer-col{
+   width: 100%;
+   text-align: left;
+   margin-bottom: 20px;
+  }
+  }

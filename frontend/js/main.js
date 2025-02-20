@@ -183,3 +183,58 @@ counters.forEach(counter => {
   animate();
 });
 
+const testimonials = [
+  {
+      text: "Toplife Construction provided exceptional service. Highly recommended! Toplife Construction provided exceptional service. Highly recommended! Toplife Construction provided exceptional service. Highly recommended!",
+      client: "Sarah Mwale"
+  },
+  {
+      text: "Professional, timely, and reliable. Great experience!",
+      client: "James Banda"
+  },
+  {
+      text: "Their work exceeded our expectations. Would hire again!",
+      client: "Chanda Mutale"
+  }
+];
+
+let currentIndex = 0;
+const textElement = document.querySelector(".testimonial-text");
+const clientElement = document.querySelector(".client-name"); // Corrected to target .client-name
+const prevButton = document.getElementById("prev");
+const nextButton = document.getElementById("next");
+
+function updateTestimonial(index) {
+  // Fade out before changing content
+  textElement.style.opacity = 0;
+  clientElement.style.opacity = 0;
+
+  setTimeout(() => {
+      textElement.textContent = `"${testimonials[index].text}"`;
+      clientElement.textContent = testimonials[index].client;
+
+      // Fade back in
+      textElement.style.opacity = 1;
+      clientElement.style.opacity = 1;
+  }, 400); // Delay change slightly for smoother effect
+}
+
+
+prevButton.addEventListener("click", () => {
+  currentIndex = (currentIndex === 0) ? testimonials.length - 1 : currentIndex - 1;
+  updateTestimonial(currentIndex);
+});
+
+nextButton.addEventListener("click", () => {
+  currentIndex = (currentIndex === testimonials.length - 1) ? 0 : currentIndex + 1;
+  updateTestimonial(currentIndex);
+});
+
+
+
+
+
+
+
+
+

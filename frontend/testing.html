@@ -3,55 +3,36 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Counter Section</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    .loader {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(255, 255, 255, 0.8);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-}
-
-.spinner {
-  border: 4px solid #f3f3f3;
-  border-top: 4px solid #3498db;
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  animation: spin 2s linear infinite;
-}
-
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
-  </style>
+  <title>Document</title>
+  <link rel="stylesheet" href="css/testing.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div id="loader" class="loader">
-        <div class="spinner"></div>
+  <section class="about-section">
+    <div class="about-container">
+      <div class="about-content">
+        <h2 class="about-title">About Us</h2>
+            <div class="about-line"></div>
+            <h3 class="about-subtitle">Top Construction Services in Zambia & Lusaka</h3>
+            <p class="about-paragraph">
+                Sina Institute of Networks and Aesthetics, the State of the Art Training Center, was established in Feb, 2010.
+                SINA offers training programs in areas of Information technology, Industrial Automation, Telecom, Management,
+                Personal Development and vocational technical training leading to entrepreneurship. Our courses have been developed 
+                and refined to ensure that material presented is current and relevant that maximizes your return on investment in training. 
+                About SINA consist of lectures and videos with ample time for hands-on practice in labs and one-on-one time with the instructor.
+            </p>
+            <p class="about-paragraph">
+                We ensure About SINA participants learn what they need to know to make their job easier and more productive.
+            </p>
+            <button class="about-button">
+                READ MORE <i class="las la-arrow-right"></i>
+            </button>
       </div>
-      
-
-  <script>
-    window.addEventListener("load", function() {
-  const loader = document.getElementById("loader");
-  loader.style.display = "none"; // Hide the loader after the page loads
-});
-
-  </script>
+      <div class="about-image">
+        <img src="assets/images/JK.png" alt="Our Team" />
+      </div>
+    </div>
+  </section>
+   
 </body>
 </html>
