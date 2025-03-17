@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Our Projects | Toplife Construction Zambia</title>
+
+    <!-- Poppins font from Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Line Awesome icons CDN -->
+    <link rel= "stylesheet" href= "https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css" >
+
+    <!-- Link to CSS -->
+    <link rel="stylesheet" href="/css/projects.css">
+
+    <!-- Link to browser tab logo -->
+    <link rel="icon" type="image/png" href="../assets/images/logo.png">
+
+</head>
+<body>
+
+<!-- First Navigation Bar ------------------------------------------------------------------------------------->
+
+<nav id="first-nav">
+    <div class="contact-info">
+        <div class="contact-item">
+            <i class="la la-envelope"></i>
+            <span>admin@toplifeinvestments.org</span>
+        </div>
+        <div class="contact-item">
+            <a href="tel:+260964729745">
+                <i class="la la-phone"></i>
+                <span>+260966120659 (Lusaka)</span>
+            </a>
+            <button id="toggle-phone" class="toggle-btn">
+              <i class="las la-angle-down"></i>
+          </button>
+        </div>
+        <div class="contact-item hidden" id="hidden-phone">
+          <a href="tel:+260964729745">
+              <i class="la la-phone"></i>
+              <span>+260964729745 (Kitwe)</span>
+          </a>
+      </div>
+    </div>
+    <div class="social-links">
+        <a href="https://web.facebook.com/ToplifeZambia" target="_blank">
+            <i class="lab la-facebook-square"></i>
+        </a>
+    </div>
+  </nav>
+    
+
+<!-- Second Navigation Bar --------------------------------------------------------------------------------------->
+
+<nav id="second-nav">
+  <div class="logo">
+    <a href="/">
+        <img src="/assets/images/logo-trans-com.png" alt="Company Logo" class="logo-img">
+    </a>
+  </div>
+    
+    <ul id="menu-list">
+        <li><a href="/">Home</a></li>
+        <li><a href="/about">About us</a></li>
+        <li><a href="/#services">Services</a></li>
+        <li><a href="/projects"class="active">Projects</a></li>
+        <li><a href="/contact">Contact</a></li>
+        <li><a href="/faq">FAQ</a></li>
+    </ul>
+    <div class="menu-icon">
+        <i class="las la-bars" onclick="toggleMenu()"></i>
+    </div>
+</nav>
+
+
+<!-- Page title --------------------------------------------------------------------------------------->
+
+<section class="page-title">
+    <div class="page-title-bg"></div>
+    <div class="container">
+        <div class="title-content">
+            <h1>Our Projects</h1>
+            <div class="breadcrumb">
+                <a href="/">Home</a>
+                <span class="separator"><i class="las la-angle-right"></i></span>
+                <span class="current-page">Projects</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- projects title --------------------------------------------------------------------------------------->
+
+<section class="projects">
+
+    <div class="projects-header">
+        <h3 class="section-subtitle">Our Work</h3>
+        <h1 class="section-title">Completed Projects</h1>
+        <div class="project-filter">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="residential">Residential</button>
+            <button class="filter-btn" data-filter="commercial">Commercial</button>
+            <button class="filter-btn" data-filter="industrial">Industrial</button>
+        </div>
+    </div>
+
+    <div class="portfolio-grid">
+        <!--------Projects are dynamically shown here-------->
+    </div>
+    
+</section>
+
+<!-- Footer ----------------------------------------------------------------------------------------------->
+
+<footer>
+    <div class="footer-container">
+        <div class="footer-rows">
+              <div class="footer-col" id="company">
+                  <a href="/">
+                    <img src="/assets/images/logo-trans-com.png" alt="" class="logo2">
+                  </a>
+                  <p>
+                    We are specialized in construction, make your business a brand.
+                    Try our premium services.
+                  </p>
+                  <div class="social">
+                    <a href="https://web.facebook.com/ToplifeZambia" target="_blank"><i class="lab la-facebook-square"></i></a>
+                  </div>
+              </div>
+
+
+              <div class="footer-col" id="f-services">
+                 <h3>Services</h3>
+                 <div class="links">
+                    <a href="/services/service-1">Aluminium Works</a>
+                    <a href="/services/service-2">Security Burglars</a>
+                    <a href="/services/service-3">Roller Shutter Doors</a>
+                    <a href="/#services">View all</a>
+                 </div>
+              </div>
+
+              <div class="footer-col" id="useful-links">
+                 <h3>Links</h3>
+                 <div class="links">
+                    <a href="/faq">FAQ</a>
+                    <a href="#">Our Policy</a>
+                    <a href="#">Login</a>
+                 </div>
+              </div>
+
+              <div class="footer-col" id="contact">
+                  <h3>Contact</h3>
+                  <div class="contact-details">
+                    <i class="las la-map-marked"></i>
+                    <p>Plot 26008 ,off kwacha Road Olympia Lusaka 10101 Lusaka, Zambia</p>
+                  </div>
+                  <br>
+                  <br>
+                  <div class="contact-details">
+                    <i class="las la-phone"></i>
+                    <p>+260 977347542</p>
+                  </div>
+              </div>
+        </div>
+    </div>
+ </footer>
+
+<script>
+
+/*============================== Navigation Bar | Toggle Feature ==========================================*/
+
+let menuList = document.getElementById("menu-list")
+    menuList.style.maxHeight = "0px";
+
+    function toggleMenu(){
+        if(menuList.style.maxHeight == "0px")
+        {
+            menuList.style.maxHeight = "300px";
+        }
+        else{
+            menuList.style.maxHeight = "0px";
+        }
+    }
+
+/*=========================================================================================================*/
+
+/*============================== Filter Buttons | Filter Feature ==========================================*/
+        
+ 
+
+/*=========================================================================================================*/
+
+/*============================== Dynamic Project Grid | Rendering Feature ==================================*/
+
+document.addEventListener("DOMContentLoaded", async () => {
+    const portfolioGrid = document.querySelector(".portfolio-grid");
+    let allProjects = []; // Store all projects
+    let currentPage = 1;
+    const projectsPerPage = 6; // 3 per row, 2 rows
+    
+    // Add pagination container to HTML
+    const paginationHTML = `
+        <div class="pagination-container">
+            <button id="prev-page" class="pagination-btn"><i class="las la-angle-left"></i> Previous</button>
+            <div id="page-numbers" class="page-numbers"></div>
+            <button id="next-page" class="pagination-btn">Next <i class="las la-angle-right"></i></button>
+        </div>
+    `;
+    
+    // Insert pagination after the portfolio grid
+    portfolioGrid.insertAdjacentHTML('afterend', paginationHTML);
+    
+    const prevButton = document.getElementById('prev-page');
+    const nextButton = document.getElementById('next-page');
+    const pageNumbers = document.getElementById('page-numbers');
+    
+    try {
+        // Fetch projects from backend
+        const response = await fetch("http://localhost:3000/api/projects");
+        allProjects = await response.json();
+        
+        // Initial setup
+        updateActiveFilter('all');
+        displayProjects('all', 1);
+        setupPagination('all');
+        
+        // Filter button event listeners
+        document.querySelectorAll('.filter-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                const filter = this.getAttribute('data-filter');
+                updateActiveFilter(filter);
+                currentPage = 1; // Reset to first page when changing filters
+                displayProjects(filter, currentPage);
+                setupPagination(filter);
+            });
+        });
+        
+        // Pagination event listeners
+        prevButton.addEventListener('click', () => {
+            const activeFilter = document.querySelector('.filter-btn.active').getAttribute('data-filter');
+            if (currentPage > 1) {
+                currentPage--;
+                displayProjects(activeFilter, currentPage);
+                updatePaginationButtons(activeFilter);
+            }
+        });
+        
+        nextButton.addEventListener('click', () => {
+            const activeFilter = document.querySelector('.filter-btn.active').getAttribute('data-filter');
+            const filteredProjects = filterProjects(activeFilter);
+            const totalPages = Math.ceil(filteredProjects.length / projectsPerPage);
+            
+            if (currentPage < totalPages) {
+                currentPage++;
+                displayProjects(activeFilter, currentPage);
+                updatePaginationButtons(activeFilter);
+            }
+        });
+
+        // Add window resize event listener to update pagination when screen size changes
+        window.addEventListener('resize', () => {
+            const activeFilter = document.querySelector('.filter-btn.active').getAttribute('data-filter');
+            setupPagination(activeFilter);
+        });
+        
+    } catch (error) {
+        console.error("Error fetching projects:", error);
+    }
+    
+    // Function to update active filter button
+    function updateActiveFilter(filter) {
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.classList.remove('active');
+            if (btn.getAttribute('data-filter') === filter) {
+                btn.classList.add('active');
+            }
+        });
+    }
+    
+    // Function to filter projects based on category
+    function filterProjects(filter) {
+        if (filter === 'all') {
+            return allProjects;
+        } else {
+            return allProjects.filter(project => 
+                project.projectType.toLowerCase() === filter
+            );
+        }
+    }
+    
+    // Function to display projects for current page and filter
+    function displayProjects(filter, page) {
+        const filteredProjects = filterProjects(filter);
+        const startIndex = (page - 1) * projectsPerPage;
+        const endIndex = startIndex + projectsPerPage;
+        const projectsToShow = filteredProjects.slice(startIndex, endIndex);
+        
+        // Clear existing content
+        portfolioGrid.innerHTML = "";
+        
+        // Add projects to grid
+        projectsToShow.forEach(project => {
+            const projectHTML = `
+                <div class="portfolio-item" data-category="${project.projectType.toLowerCase()}">
+                    <a href="project.html?id=${project._id}" class="portfolio-link">
+                        <div class="portfolio-image-wrapper">
+                            <img src="${project.mainImage}" alt="${project.projectName}" class="portfolio-image">
+                            <div class="project-info">
+                                <p class="project-type">${project.projectType}</p>
+                                <h3 class="project-name">${project.projectName}</h3>
+                                <p class="project-location"><i class="las la-map-marker"></i> ${project.location}</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            `;
+            portfolioGrid.innerHTML += projectHTML;
+        });
+    }
+    
+    // Function to setup pagination based on filter
+    function setupPagination(filter) {
+        const filteredProjects = filterProjects(filter);
+        const totalPages = Math.ceil(filteredProjects.length / projectsPerPage);
+        
+        // Clear page numbers
+        pageNumbers.innerHTML = '';
+        
+        // Smart pagination - show limited page numbers on mobile
+        const maxVisiblePages = window.innerWidth < 480 ? 3 : (window.innerWidth < 768 ? 5 : 10);
+        
+        // Calculate range of page numbers to show
+        let startPage = Math.max(1, currentPage - Math.floor(maxVisiblePages / 2));
+        let endPage = Math.min(totalPages, startPage + maxVisiblePages - 1);
+        
+        // Adjust start page if we're near the end
+        if (endPage - startPage + 1 < maxVisiblePages) {
+            startPage = Math.max(1, endPage - maxVisiblePages + 1);
+        }
+        
+        // Add first page and ellipsis if needed
+        if (startPage > 1) {
+            addPageButton(1, filter);
+            if (startPage > 2) {
+                const ellipsis = document.createElement('span');
+                ellipsis.classList.add('pagination-ellipsis');
+                ellipsis.textContent = '...';
+                pageNumbers.appendChild(ellipsis);
+            }
+        }
+        
+        // Add page numbers
+        for (let i = startPage; i <= endPage; i++) {
+            addPageButton(i, filter);
+        }
+        
+        // Add last page and ellipsis if needed
+        if (endPage < totalPages) {
+            if (endPage < totalPages - 1) {
+                const ellipsis = document.createElement('span');
+                ellipsis.classList.add('pagination-ellipsis');
+                ellipsis.textContent = '...';
+                pageNumbers.appendChild(ellipsis);
+            }
+            addPageButton(totalPages, filter);
+        }
+        
+        updatePaginationButtons(filter);
+        
+        // Helper function to add page button
+        function addPageButton(pageNum, filter) {
+            const pageButton = document.createElement('button');
+            pageButton.classList.add('page-number');
+            pageButton.textContent = pageNum;
+            
+            if (pageNum === currentPage) {
+                pageButton.classList.add('active');
+            }
+            
+            pageButton.addEventListener('click', () => {
+                currentPage = pageNum;
+                displayProjects(filter, currentPage);
+                setupPagination(filter); // Recreate pagination with new current page
+            });
+            
+            pageNumbers.appendChild(pageButton);
+        }
+    }
+    
+    // Function to update pagination button states
+    function updatePaginationButtons(filter) {
+        const filteredProjects = filterProjects(filter);
+        const totalPages = Math.ceil(filteredProjects.length / projectsPerPage);
+        
+        // Update page number active states
+        document.querySelectorAll('.page-number').forEach(button => {
+            button.classList.remove('active');
+            if (parseInt(button.textContent) === currentPage) {
+                button.classList.add('active');
+            }
+        });
+        
+        // Update prev/next button states
+        prevButton.disabled = currentPage === 1;
+        nextButton.disabled = currentPage === totalPages;
+    }
+});
+
+/*=========================================================================================================*/
+
+</script>
+<script src="../js/external.js"></script>
+
+<script async src='https://d2mpatx37cqexb.cloudfront.net/delightchat-whatsapp-widget/embeds/embed.min.js'></script>
+        <script>
+          var wa_btnSetting = {"btnColor":"#038886","ctaText":"","cornerRadius":40,"marginBottom":20,"marginLeft":20,"marginRight":20,"btnPosition":"right","whatsAppNumber":"260964729745","welcomeMessage":"Please proceed with your message, and we'll assist you shortly.","zIndex":999999,"btnColorScheme":"light"};
+          window.onload = () => {
+            _waEmbed(wa_btnSetting);
+          };
+        </script>
+      
+</body>
+</html>

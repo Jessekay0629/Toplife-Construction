@@ -1,3 +1,5 @@
+/*============================== Home page (Hero-Section) | Sliding Content Feature ==========================================*/
+
 let currentSlide = 0;
 const slides = document.querySelectorAll('.slide');
 const indicators = document.querySelectorAll('.indicator');
@@ -162,10 +164,12 @@ window.addEventListener('load', () => {
   }, 9000); // Delay to sync with initial image slide
 });
 
+/*======================================================================================================*/
 
+
+/*============================== Home page (Stats Section) | Dynamic Numbers ===========================*/
 
 const counters = document.querySelectorAll('.number');
-
 counters.forEach(counter => {
   const animate = () => {
     const target = +counter.getAttribute('data-target');
@@ -183,58 +187,26 @@ counters.forEach(counter => {
   animate();
 });
 
-const testimonials = [
-  {
-      text: "Toplife Construction provided exceptional service. Highly recommended! Toplife Construction provided exceptional service. Highly recommended! Toplife Construction provided exceptional service. Highly recommended!",
-      client: "Sarah Mwale"
-  },
-  {
-      text: "Professional, timely, and reliable. Great experience!",
-      client: "James Banda"
-  },
-  {
-      text: "Their work exceeded our expectations. Would hire again!",
-      client: "Chanda Mutale"
-  }
-];
 
-let currentIndex = 0;
-const textElement = document.querySelector(".testimonial-text");
-const clientElement = document.querySelector(".client-name"); // Corrected to target .client-name
-const prevButton = document.getElementById("prev");
-const nextButton = document.getElementById("next");
+/*============================== Home page (Navigation Bar - Responsive) | Dropdown Feature ==============*/
 
-function updateTestimonial(index) {
-  // Fade out before changing content
-  textElement.style.opacity = 0;
-  clientElement.style.opacity = 0;
+document.addEventListener("DOMContentLoaded", function () {
+  const toggleBtn = document.getElementById("toggle-phone");
+  const hiddenPhone = document.getElementById("hidden-phone");
 
-  setTimeout(() => {
-      textElement.textContent = `"${testimonials[index].text}"`;
-      clientElement.textContent = testimonials[index].client;
-
-      // Fade back in
-      textElement.style.opacity = 1;
-      clientElement.style.opacity = 1;
-  }, 400); // Delay change slightly for smoother effect
-}
-
-
-prevButton.addEventListener("click", () => {
-  currentIndex = (currentIndex === 0) ? testimonials.length - 1 : currentIndex - 1;
-  updateTestimonial(currentIndex);
-});
-
-nextButton.addEventListener("click", () => {
-  currentIndex = (currentIndex === testimonials.length - 1) ? 0 : currentIndex + 1;
-  updateTestimonial(currentIndex);
+  toggleBtn.addEventListener("click", function () {
+      if (hiddenPhone.style.display === "none" || hiddenPhone.style.display === "") {
+          hiddenPhone.style.display = "flex";
+          toggleBtn.innerHTML = '<i class="las la-angle-up"></i>';
+      } else {
+          hiddenPhone.style.display = "none";
+          toggleBtn.innerHTML = '<i class="las la-angle-down"></i>';
+      }
+  });
 });
 
 
-
-
-
-
+/*======================================================================================================*/
 
 
 
