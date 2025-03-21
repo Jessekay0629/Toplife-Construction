@@ -12,9 +12,6 @@ app.use(cors());
 app.use(express.json());  // To parse incoming JSON requests
 app.use(express.urlencoded({ extended: true }));  // To parse incoming URL-encoded data (form submissions)
 
-// Serve static frontend files (correct path for frontend outside of backend)
-app.use(express.static(path.join(__dirname, '..', 'frontend')));  // Serve h outside of backend
-
 // Import routes from routes.js
 
 const routes = require('./routes/routes'); // Universal/General Routes
