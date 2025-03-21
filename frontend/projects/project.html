@@ -171,8 +171,10 @@ if (!projectId) {
 }
 
 try {
+    import API_ENDPOINTS from '../js/config.js'; 
+    
     // Fetch project details
-    const response = await fetch(`/api/projects/${projectId}`);
+    const response = await fetch(`${API_ENDPOINTS.projectDetails.replace('${projectId}', projectId)}`);
     const project = await response.json();
     
     // Build and insert page HTML
