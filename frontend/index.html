@@ -574,9 +574,12 @@ function setupProjectCarousel() {
 }
 
 // Call this after fetching your projects
+
+const BACKEND_URL = process.env.BACKEND_URL;
+    
 async function fetchLatestProjects() {
     try {
-        const response = await fetch('https://toplife-construction.onrender.com/api/projects/latest');
+        const response = await fetch('${BACKEND_URL}/api/projects/latest');
         const projects = await response.json();
 
         const projectSlider = document.querySelector('.projects-slider');
