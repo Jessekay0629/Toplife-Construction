@@ -17,7 +17,7 @@ router.post('/send-email', (req, res) => {
   const mailOptions = {
     from: `"${name}" <contactform.toplife@gmail.com>`,  // Use your form email as sender
     replyTo: `"${name}" <${email}>`,  // Set the reply-to as the user's email
-    to: "admin@toplifeinvestments.org", // Client's email
+    to: "jessekayombo09@gmail.com", // Client's email
     subject: `Website Contact Form Submission from ${name}`,  // Include name in subject
     messageId: `<form-${Date.now()}-${Math.random().toString(36).substring(2, 15)}@yourdomain.com>`, // Unique message ID
     headers: {
