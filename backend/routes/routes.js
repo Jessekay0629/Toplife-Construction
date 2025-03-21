@@ -9,7 +9,7 @@ router.get('/', (req, res) => {
 });
 
 // Projects page route
-router.get('/projectfs', (req, res) => {
+router.get('/projects', (req, res) => {
     res.sendFile(path.join(__dirname, '..', '..', 'frontend', 'projects.html'));
 });
 
