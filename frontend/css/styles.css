@@ -436,10 +436,10 @@ align-items: center;
     height: 130px;
   }
   
-  /* Third stack: The paragraph (lorem ipsum) */
+  /* Third stack: The paragraph */
   .paragraph {
     font-weight: lighter; /* Light font weight */
-    width: 790px;
+    width: 800px;
     
   }
   
