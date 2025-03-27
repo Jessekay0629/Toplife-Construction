@@ -306,7 +306,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         projectsToShow.forEach(project => {
             const projectHTML = `
                 <div class="portfolio-item" data-category="${project.projectType.toLowerCase()}">
-                    <a href="project.html?id=${project._id}" class="portfolio-link">
+                    <a href="/projects/project.html?id=${project._id}" class="portfolio-link">
                         <div class="portfolio-image-wrapper">
                             <img src="${project.mainImage}" alt="${project.projectName}" class="portfolio-image">
                             <div class="project-info">
