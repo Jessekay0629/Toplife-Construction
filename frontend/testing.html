@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Toplife Construction Zambia</title>
+
+    <!-- Poppins font from Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Line Awesome icons CDN -->
+    <link rel= "stylesheet" href= "https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css" >
+
+    <!-- Font Awesome icons CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+    <!-- Link to CSS -->
+    <link rel="stylesheet" href="/css/projects.css">
+
+    <!-- Link to browser tab logo -->
+    <link rel="icon" type="image/png" href="assets/images/logo-com.png">
+
+
+
+
+
+
+
+    <style>
+      /* Main Layout */
+      .service-main-container {
+          display: flex;
+          overflow: visible;
+          max-width: 1400px;
+          margin: 40px auto;
+          padding: 30px;
+          gap: 40px 40px; 
+          row-gap: 0; 
+      }
+
+      /* Left Sidebar - No fixed height, height based on content */
+      .service-sidebar {
+          width: 28%;
+          min-width: 280px;
+          background-color: white;
+          padding: 40px 30px;
+          border-radius: 12px;
+          position: relative;
+          height: fit-content; 
+          align-self: flex-start;
+      }
+    
+      .service-logo-container {
+          margin-bottom: 30px;
+      }
+    
+      .service-logo {
+          font-size: 1.5rem;
+          font-weight: bold;
+          color: #038886;
+      }
+    
+      .service-sidebar-title {
+          font-size: 1.8rem;
+          margin-bottom: 25px;
+          position: relative;
+          color: #038886;
+          padding-bottom: 15px;
+          border-bottom: 2px solid #f1f1f1;
+      }
+    
+      .service-sidebar-title:before {
+          content: "";
+          position: absolute;
+          left: 0;
+          top: 15px;
+          width: 8px;
+          height: 8px;
+          background-color: #038886;
+          border-radius: 50%;
+      }
+    
+      .service-sidebar-title span {
+          margin-left: 20px;
+      }
+    
+      .service-list {
+          list-style: none;
+          padding: 0;
+      }
+    
+      .service-item {
+          margin-bottom: 15px;
+      }
+    
+      .service-link {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 15px;
+          border: 2px solid #038886;
+          border-radius: 8px;
+          transition: all 0.3s ease;
+          text-decoration: none;
+          color: #555;
+      }
+    
+      .service-link:hover {
+          transform: translateY(-3px);
+          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+          border-color: #038886;
+          background-color: #f9f9f9;
+      }
+    
+      .service-name {
+          font-size: 1.1rem;
+          color: #038886;
+      }
+    
+      .service-icon {
+          color: #038886;
+          font-size: 1.2rem;
+      }
+    
+      .service-cta-container {
+          margin-top: 20px;
+          padding: 25px;
+          background-color: #f9f9f9;
+          border-radius: 8px;
+          text-align: center;
+          border: 1px solid #eee;
+      }
+    
+      .service-cta-heading {
+          font-size: 1.3rem;
+          color: #038886;
+          margin-bottom: 15px;
+      }
+    
+      .service-cta-text {
+          color: #666;
+          margin-bottom: 20px;
+          line-height: 1.6;
+      }
+    
+      .service-cta-button {
+          background-color: #038886;
+          color: white;
+          border: none;
+          padding: 12px 25px;
+          border-radius: 6px;
+          font-weight: bold;
+          cursor: pointer;
+          transition: all 0.3s ease;
+      }
+    
+      .service-cta-button:hover {
+          background-color: #026e6c;
+          transform: translateY(-2px);
+          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+    
+      .service-contact-info {
+          margin-top: 40px;
+          padding-top: 20px;
+          border-top: 1px solid #eee;
+      }
+    
+      .service-contact-info h3 {
+          margin-bottom: 15px;
+          color: #038886;
+      }
+    
+      .service-contact-info p {
+          margin-bottom: 10px;
+          color: #666;
+      }
+    
+      /* Right Content Area */
+      .service-content-area {
+          width: calc(72% - 40px);
+          padding: 20px;
+          background-color: white;
+          border-radius: 12px;
+      }
+    
+      /* Service Content */
+      .service-header {
+          height: fit-content;
+      }
+    
+      .service-title {
+          font-size: 2rem;
+          color: #038886;
+          font-weight: bold;
+          margin-bottom: 20px;
+      }
+    
+      .service-image {
+          width: 100%;
+          height: 450px;
+          overflow: hidden;
+          border-radius: 8px;
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+          margin-bottom: 40px;
+      }
+    
+      .service-image img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          transition: transform 0.5s ease;
+      }
+    
+      .service-image:hover img {
+          transform: scale(1.05);
+      }
+    
+      /* Service overview adjustments */
+    
+    
+      .service-overview h2 {
+          margin-bottom: 25px;
+          color: #038886;
+          font-size: 1.8rem;
+          border-bottom: 2px solid #f1f1f1;
+          padding-bottom: 15px;
+      }
+    
+      .service-overview p {
+          text-align: justify;
+          font-size: 1.1rem;
+          line-height: 1.8;
+          color: #555;
+      }
+    
+      /* Full-width features section */
+      .service-features {
+          width: 100%;
+          background-color: white;
+          border-radius: 8px;
+          padding-left: 100px;
+          padding-bottom: 20px;
+          margin-bottom: 10px; /* Remove top margin */
+      }
+    
+      .service-features h2 {
+          margin-bottom: 25px;
+          color: #038886;
+          font-size: 1.8rem;
+          border-bottom: 2px solid #f1f1f1;
+          padding-bottom: 15px;
+      }
+    
+      .service-features-grid {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 20px;
+      }
+    
+      .service-feature-item {
+          display: flex;
+          align-items: flex-start;
+          gap: 15px;
+      }
+    
+      .service-feature-icon {
+          color: #038886;
+          font-size: 1.5rem;
+          margin-top: 5px;
+      }
+    
+      .service-feature-content h3 {
+          margin-bottom: 10px;
+          color: #333;
+      }
+    
+      .service-feature-content p {
+          color: #666;
+          line-height: 1.6;
+      }
+    
+      /* Responsive design */
+      @media (max-width: 1200px) {
+          .service-sidebar {
+              width: 32%;
+          }
+          
+          .service-content-area {
+              width: calc(68% - 40px);
+          }
+      }
+    
+      @media (max-width: 992px) {
+
+          .service-sidebar {
+              width: 38%;
+          }
+
+          .service-main-container {
+              padding: 0;
+              gap: 0;
+          }
+
+          .service-features {
+            padding-left: 50px;
+          }
+          
+          .service-content-area {
+              width: calc(62% - 40px);
+          }
+          
+          .service-features-grid {
+              grid-template-columns: 1fr;
+          }
+      }
+    
+      @media (max-width: 768px) {
+          .service-main-container {
+              flex-direction: column;
+          }
+          
+          .service-sidebar {
+              width: 100%;
+              margin-bottom: 30px;
+          }
+          
+          .service-content-area {
+              width: 100%;
+          }
+          
+          .service-image {
+              height: 300px;
+          }
+      }
+    </style>
+
+<!-- First Navigation Bar ------------------------------------------------------------------------------------->
+
+<nav id="first-nav">
+  <div class="contact-info">
+      <div class="contact-item">
+          <i class="la la-envelope"></i>
+          <span>admin@toplifeinvestments.org</span>
+      </div>
+      <div class="contact-item">
+          <a href="tel:+260964729745">
+              <i class="la la-phone"></i>
+              <span>+260966120659 (Lusaka)</span>
+          </a>
+          <button id="toggle-phone" class="toggle-btn">
+            <i class="las la-angle-down"></i>
+        </button>
+      </div>
+      <div class="contact-item hidden" id="hidden-phone">
+        <a href="tel:+260964729745">
+            <i class="la la-phone"></i>
+            <span>+260964729745 (Kitwe)</span>
+        </a>
+    </div>
+  </div>
+  <div class="social-links">
+      <a href="https://web.facebook.com/ToplifeZambia" target="_blank">
+          <i class="lab la-facebook-square"></i>
+      </a>
+  </div>
+</nav>
+    
+
+<!-- Second Navigation Bar --------------------------------------------------------------------------------------->
+
+<nav id="second-nav">
+    <div class="logo">
+      <a href="/">
+          <img src="assets/images/logo-trans-com.png" alt="Company Logo" class="logo-img">
+      </a>
+    </div>
+
+    <ul id="menu-list">
+        <li><a href="/" class="active">Home</a></li>
+        <li><a href="#about">About us</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="/projects">Projects</a></li>
+        <li><a href="/contact">Contact</a></li>
+        <li><a href="/faq">FAQ</a></li>
+    </ul>
+    <div class="menu-icon">
+        <i class="las la-bars" onclick="toggleMenu()"></i>
+    </div>
+</nav>
+
+<!-- Page title --------------------------------------------------------------------------------------->
+
+<section class="page-title">
+  <div class="page-title-bg"></div>
+  <div class="container">
+      <div class="title-content">
+          <h1>Aluminium Works</h1>
+          <div class="breadcrumb">
+              <a href="/">Home</a>
+              <span class="separator"><i class="las la-angle-right"></i></span>
+              <span class="current-page">Projects</span>
+          </div>
+      </div>
+  </div>
+</section>
+
+
+
+
+
+<div class="service-main-container">
+  <!-- Left Sidebar - Services -->
+  <div class="service-sidebar">
+      <h2 class="service-sidebar-title"><span>Our Services</span></h2>
+      <ul class="service-list">
+          <li class="service-item">
+              <a href="product-design.html" class="service-link">
+                  <span class="service-name">Security Burglars</span>
+                  <i class="las la-external-link-square-alt service-icon"></i>
+              </a>
+          </li>
+          <li class="service-item">
+              <a href="creative-solution.html" class="service-link">
+                  <span class="service-name">Roller Shutter Doors</span>
+                  <i class="las la-external-link-square-alt service-icon"></i>
+              </a>
+          </li>
+          <li class="service-item">
+              <a href="visual-identity.html" class="service-link">
+                  <span class="service-name">Stainless Steel Handrails</span>
+                  <i class="las la-external-link-square-alt service-icon"></i>
+              </a>
+          </li>
+          <li class="service-item">
+              <a href="branding-design.html" class="service-link">
+                  <span class="service-name">Garage Doors</span>
+                  <i class="las la-external-link-square-alt service-icon"></i>
+              </a>
+          </li>
+          <li class="service-item">
+              <a href="web-design.html" class="service-link">
+                  <span class="service-name">Civil works</span>
+                  <i class="las la-external-link-square-alt service-icon"></i>
+              </a>
+          </li>
+      </ul>
+
+      <!-- New CTA Section -->
+      <div class="service-cta-container">
+          <h3 class="service-cta-heading">Need Custom Solutions?</h3>
+          <p class="service-cta-text">Contact our team for personalized service and expert consultation on your next project.</p>
+          <button class="service-cta-button">Get in Touch</button>
+      </div>
+  </div>
+
+  <!-- Right Content Area -->
+  <div class="service-content-area">
+      <div class="service-header">
+          <h1 class="service-title">Aluminium Works</h1>
+          <div class="service-image">
+              <img src="https://www.shutterstock.com/image-photo/construction-worker-yellow-hard-hat-600nw-2518265201.jpg" alt="Aluminium Works">
+          </div>
+      </div>
+
+      <div class="service-overview">
+          <h2>Service Overview</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vitae libero neque. Morbi tincidunt quam nulla, ac accumsan est imperdiet nec. Morbi suscipit tellus quis mi euismod euismod. Quisque placerat dolor lorem, eget egestas est luctus ut. In in feugiat ipsum, quis eleifend turpis.</p>
+          
+      </div>
+  </div>
+</div>
+
+<!-- Full-width Features Section (moved outside the right container) -->
+<div class="service-features">
+  <h2>Key Features</h2>
+  <div class="service-features-grid">
+      <div class="service-feature-item">
+          <i class="las la-check-circle service-feature-icon"></i>
+          <div class="service-feature-content">
+              <h3>Premium Materials</h3>
+              <p>We use only the highest quality aluminium that is built to last for decades.</p>
+          </div>
+      </div>
+      <div class="service-feature-item">
+          <i class="las la-check-circle service-feature-icon"></i>
+          <div class="service-feature-content">
+              <h3>Expert Craftsmen</h3>
+              <p>Our team has over 25 years of combined experience in aluminium works.</p>
+          </div>
+      </div>
+      <div class="service-feature-item">
+          <i class="las la-check-circle service-feature-icon"></i>
+          <div class="service-feature-content">
+              <h3>Custom Design</h3>
+              <p>Each project is uniquely designed to match your specific needs and preferences.</p>
+          </div>
+      </div>
+      <div class="service-feature-item">
+          <i class="las la-check-circle service-feature-icon"></i>
+          <div class="service-feature-content">
+              <h3>Fast Installation</h3>
+              <p>Our professional installation team ensures minimal disruption to your schedule.</p>
+          </div>
+      </div>
+  </div>
+</div>
+
+</body>
+</html>
+
+
+
+
+
+ <script>
+    /*============================== Home page (Hero-Section) | Sliding Content Feature ==========================================*/
+
+let currentSlide = 0;
+const slides = document.querySelectorAll('.slide');
+const indicators = document.querySelectorAll('.indicator');
+const prevBtn = document.querySelector('.prev-slide');
+const nextBtn = document.querySelector('.next-slide');
+const slider = document.querySelector('.hero-slider');
+
+// Clone first and last slides
+const firstClone = slides[0].cloneNode(true);
+const lastClone = slides[slides.length - 1].cloneNode(true);
+slider.appendChild(firstClone);
+slider.insertBefore(lastClone, slider.firstChild);
+
+// Update variables after cloning
+const totalSlides = slides.length + 2; // Include clones
+const slideWidth = 100 / totalSlides; // Percentage width for each slide
+slider.style.width = `${totalSlides * 100}%`; // Adjust total slider width
+slider.style.transform = `translateX(-${slideWidth}%)`; // Start at first actual slide
+slider.querySelectorAll('.slide').forEach(slide => {
+  slide.style.flex = `0 0 ${slideWidth}%`; // Adjust slide width
+});
+
+// Function to show the current slide
+function initializeSlider() {
+  // Move to the "clone" of the first slide for the infinite loop illusion
+  slider.style.transition = 'none';
+  slider.style.transform = `translateX(-${slideWidth}%)`; // Start at the first actual slide
+
+  // Set the first indicator as active
+  indicators.forEach(indicator => indicator.classList.remove('active'));
+  indicators[0].classList.add('active');
+
+  // Set currentSlide to the first slide
+  currentSlide = 0;
+}
+
+function showSlide(index) {
+  if (index < 0) {
+    currentSlide = slides.length - 1; // Wrap to the last slide
+    slider.style.transition = 'none'; // Disable transition for the loop effect
+    slider.style.transform = `translateX(-${(slides.length) * slideWidth}%)`;
+    setTimeout(() => {
+      slider.style.transition = 'transform 0.8s ease-in-out'; // Re-enable smooth transition
+      slider.style.transform = `translateX(-${currentSlide * slideWidth}%)`;
+    }, 20);
+  } else if (index >= slides.length) {
+    currentSlide = 0; // Wrap to the first slide
+    slider.style.transition = 'none'; // Disable transition for the loop effect
+    slider.style.transform = `translateX(0%)`;
+    setTimeout(() => {
+      slider.style.transition = 'transform 0.8s ease-in-out'; // Re-enable smooth transition
+      slider.style.transform = `translateX(-${(currentSlide + 1) * slideWidth}%)`;
+    }, 20);
+  } else {
+    currentSlide = index; // Regular movement
+    slider.style.transition = 'transform 0.8s ease-in-out'; // Smooth transition
+    slider.style.transform = `translateX(-${(currentSlide + 1) * slideWidth}%)`; // Adjust offset
+  }
+
+  // Update indicators
+  indicators.forEach((indicator, i) => {
+    if (i === currentSlide) {
+      indicator.classList.add('active');
+    } else {
+      indicator.classList.remove('active');
+    }
+  });
+}
+
+// Initialize the slider on page load
+initializeSlider();
+
+
+// Handle seamless transition
+slider.addEventListener('transitionend', () => {
+  if (currentSlide === slides.length) {
+    // Seamlessly jump to first slide
+    slider.style.transition = 'none'; // Disable transition
+    slider.style.transform = `translateX(-${slideWidth}%)`; // Reset to first actual slide
+    currentSlide = 0;
+  } else if (currentSlide === -1) {
+    // Seamlessly jump to last slide
+    slider.style.transition = 'none'; // Disable transition
+    slider.style.transform = `translateX(-${slides.length * slideWidth}%)`; // Reset to last actual slide
+    currentSlide = slides.length - 1;
+  }
+});
+
+// Auto Slide Functionality
+let autoSlide = setInterval(() => {
+  showSlide(currentSlide + 1); // Increment slide and show it
+}, 6000);
+
+// Updated resetAutoSlide function
+function resetAutoSlide() {
+  clearInterval(autoSlide); // Stop the current auto slide
+  autoSlide = setInterval(() => {
+    showSlide(currentSlide + 1); // Automatically advance the slide
+  }, 6000); // Maintain consistent interval
+}
+
+// Updated Manual Controls
+prevBtn.addEventListener('click', () => {
+  showSlide(currentSlide - 1); // Show the previous slide
+  resetAutoSlide(); // Restart auto sliding
+  reanimateContent(); // Trigger reanimation
+});
+
+nextBtn.addEventListener('click', () => {
+  showSlide(currentSlide + 1); // Show the next slide
+  resetAutoSlide(); // Restart auto sliding
+  reanimateContent(); // Trigger reanimation
+});
+
+// Updated indicator click handler
+indicators.forEach((indicator, index) => {
+  indicator.addEventListener('click', () => {
+    showSlide(index);
+    resetAutoSlide(); // Restart auto sliding
+    reanimateContent(); // Trigger reanimation
+  });
+});
+
+
+// Select the content container
+const contentContainer = document.querySelector('.content-container');
+
+// Function to trigger content animation after slide
+function triggerContentAnimation() {
+  setTimeout(() => {
+    contentContainer.classList.add('content-appear'); // Add animation class
+  }, 1500); // Adjust the delay to sync with image slide
+}
+
+// Call the function after the first slide transition
+slider.addEventListener('transitionend', () => {
+  triggerContentAnimation();
+});
+
+// Optional: Ensure animation runs on page load
+window.addEventListener('load', () => {
+  triggerContentAnimation();
+});
+
+// Function to handle content reanimation
+function reanimateContent() {
+  contentContainer.classList.remove('content-appear'); // Remove animation class
+  setTimeout(() => {
+    contentContainer.classList.add('content-appear'); // Reapply animation class
+  }, 1500); // Short delay to allow reanimation
+}
+
+// Trigger reanimation on slide transition
+slider.addEventListener('transitionend', () => {
+  reanimateContent(); // Reanimate content after each slide
+});
+
+// Optional: Ensure it runs on page load for the first slide
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    contentContainer.classList.add('content-appear'); // Trigger animation on load
+  }, 9000); // Delay to sync with initial image slide
+});
+
+/*======================================================================================================*/
+
+/*============================== Navigation Bar | Toggle Feature ==========================================*/
+
+let menuList = document.getElementById("menu-list")
+    menuList.style.maxHeight = "0px";
+
+    function toggleMenu(){
+        if(menuList.style.maxHeight == "0px")
+        {
+            menuList.style.maxHeight = "300px";
+        }
+        else{
+            menuList.style.maxHeight = "0px";
+        }
+    }
+ </script>

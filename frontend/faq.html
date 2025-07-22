@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>FAQ | Toplife Construction Zambia</title>
+
+    <!-- Poppins font from Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Line Awesome icons CDN -->
+    <link rel= "stylesheet" href= "https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css" >
+
+    <!-- Link to CSS -->
+    <link rel="stylesheet" href="/css/external.css">
+
+    <!-- Link to browser tab logo -->
+    <link rel="icon" type="image/png" href="assets/images/logo.png">
+
+</head>
+<body>
+
+<!-- First Navigation Bar ------------------------------------------------------------------------------------->
+
+<nav id="first-nav">
+  <div class="contact-info">
+      <div class="contact-item">
+          <i class="la la-envelope"></i>
+          <span>sales@toplifeinvestments.org</span>
+      </div>
+      <div class="contact-item">
+          <a href="tel:+260964729745">
+              <i class="la la-phone"></i>
+              <span>+260966120659 (Lusaka)</span>
+          </a>
+          <button id="toggle-phone" class="toggle-btn">
+            <i class="las la-angle-down"></i>
+        </button>
+      </div>
+      <div class="contact-item hidden" id="hidden-phone">
+        <a href="tel:+260964729745">
+            <i class="la la-phone"></i>
+            <span>+260964729745 (Kitwe)</span>
+        </a>
+    </div>
+  </div>
+  <div class="social-links">
+      <a href="https://web.facebook.com/ToplifeZambia" target="_blank">
+          <i class="lab la-facebook-square"></i>
+      </a>
+  </div>
+</nav>
+    
+
+<!-- Second Navigation Bar --------------------------------------------------------------------------------------->
+
+<nav id="second-nav">
+  <div class="logo">
+    <a href="/">
+        <img src="/assets/images/logo-trans-com.png" alt="Company Logo" class="logo-img">
+    </a>
+  </div>
+    
+    <ul id="menu-list">
+        <li><a href="/">Home</a></li>
+        <li><a href="/about">About us</a></li>
+        <li><a href="/#services">Services</a></li>
+        <li><a href="/projects">Projects</a></li>
+        <li><a href="contact">Contact</a></li>
+        <li><a href="/faq" class="active">FAQ</a></li>
+    </ul>
+    <div class="menu-icon">
+        <i class="las la-bars" onclick="toggleMenu()"></i>
+    </div>
+</nav>
+
+
+<!-- Page title --------------------------------------------------------------------------------------->
+
+<section class="page-title">
+  <div class="page-title-bg"></div>
+  <div class="title-container">
+      <div class="title-content">
+          <h1>FAQ</h1>
+          <div class="breadcrumb">
+              <a href="/">Home</a>
+              <span class="separator"><i class="las la-angle-right"></i></span>
+              <span class="current-page">FAQ</span>
+          </div>
+      </div>
+  </div>
+</section>
+
+
+<!-- FAQ --------------------------------------------------------------------------------------->
+
+<div class="faq-container">
+
+    <h2>Frequently Asked Questions</h2>
+    <div class="accordion">
+
+      <div class="accordion-item">
+        <button id="accordion-button-1" aria-expanded="false"><span class="accordion-title">What types of construction services do you offer?</span><span class="icon" aria-hidden="true"></span></button>
+        <div class="accordion-content">
+          <p>We provide a wide range of construction services, including residential and commercial building construction, renovations, extensions, roofing, plumbing, electrical installations, and project management. Our team is dedicated to delivering high-quality workmanship tailored to your needs.</p>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <button id="accordion-button-2" aria-expanded="false"><span class="accordion-title">Can you share pictures of your past works?</span><span class="icon" aria-hidden="true"></span></button>
+        <div class="accordion-content">
+          <p>Yes! We take pride in our completed projects and are happy to showcase them. You can view our portfolio on our website’s [Gallery/Projects] page or contact us for specific samples related to your project requirements.</p>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <button id="accordion-button-3" aria-expanded="false"><span class="accordion-title">What are your working hours?</span><span class="icon" aria-hidden="true"></span></button>
+        <div class="accordion-content">
+          <p>Our working hours are: Monday–Friday, 8:00 AM – 5:00 PM, and Saturdays, 9:00 AM – 12:30 PM. We are closed on Sundays and public holidays.</p>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <button id="accordion-button-4" aria-expanded="false"><span class="accordion-title">Where are you located?</span><span class="icon" aria-hidden="true"></span></button>
+        <div class="accordion-content">
+          <p>We have two convenient office locations: Lusaka (Head Office): Plot 26008, Off Kwacha Road, Olympia, Lusaka 10101, Zambia. Kitwe: Plot 32 Kantanta Street Nkana East Kitwe. We serve clients across Zambia and can arrange site visits as needed.</p>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <button id="accordion-button-5" aria-expanded="false"><span class="accordion-title">Can I get a quotation?</span><span class="icon" aria-hidden="true"></span></button>
+        <div class="accordion-content">
+          <p>Absolutely! We provide free quotations based on your project requirements. Simply contact us via phone, email, or our website’s contact form with details of your project, and our team will get back to you with a detailed estimate.</p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+<!-- Footer --------------------------------------------------------------------------------------->
+
+<footer>
+  <div class="footer-container">
+      <div class="footer-rows">
+            <div class="footer-col" id="company">
+                <a href="/">
+                  <img src="assets/images/logo-trans-com.png" alt="" class="logo2">
+                </a>
+                <p>
+                  We are specialized in construction, make your business a brand.
+                  Try our premium services.
+                </p>
+                <div class="social">
+                  <a href="https://web.facebook.com/ToplifeZambia" target="_blank"><i class="lab la-facebook-square"></i></a>
+                </div>
+            </div>
+
+
+            <div class="footer-col" id="f-services">
+               <h3>Services</h3>
+               <div class="links">
+                  <a href="/services/service-1">Aluminium Works</a>
+                  <a href="/services/service-2">Security Burglars</a>
+                  <a href="/services/service-3">Roller Shutter Doors</a>
+                  <a href="/#services">View all</a>
+               </div>
+            </div>
+
+            <div class="footer-col" id="useful-links">
+               <h3>Links</h3>
+               <div class="links">
+                  <a href="/faq">FAQ</a>
+                  <a href="#">Our Policy</a>
+                  <a href="#">Login</a>
+               </div>
+            </div>
+
+            <div class="footer-col" id="contact">
+                <h3>Contact</h3>
+                <div class="contact-details">
+                  <i class="las la-map-marked"></i>
+                  <p>Plot 26008 ,off kwacha Road Olympia Lusaka 10101 Lusaka, Zambia</p>
+                </div>
+                <br>
+                <br>
+                <div class="contact-details">
+                  <i class="las la-phone"></i>
+                  <p>+260966120659</p>
+                </div>
+            </div>
+      </div>
+  </div>
+</footer>
+
+<script>
+  
+/*============================== Navigation Bar | Toggle Feature ==========================================*/
+
+let menuList = document.getElementById("menu-list")
+    menuList.style.maxHeight = "0px";
+
+    function toggleMenu(){
+        if(menuList.style.maxHeight == "0px")
+        {
+            menuList.style.maxHeight = "300px";
+        }
+        else{
+            menuList.style.maxHeight = "0px";
+        }
+    }
+
+/*=========================================================================================================*/
+        
+</script>
+<script src="js/external.js"></script>
+
+<script async src='https://d2mpatx37cqexb.cloudfront.net/delightchat-whatsapp-widget/embeds/embed.min.js'></script>
+        <script>
+          var wa_btnSetting = {"btnColor":"#038886","ctaText":"","cornerRadius":40,"marginBottom":20,"marginLeft":20,"marginRight":20,"btnPosition":"right","whatsAppNumber":"260964729745","zIndex":999999,"btnColorScheme":"light"};
+          window.onload = () => {
+            _waEmbed(wa_btnSetting);
+          };
+        </script>
+      
+</body>
+</html>

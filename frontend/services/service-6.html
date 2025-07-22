@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Civil Works | Toplife Construction Zambia</title>
+    <!-- Poppins font from Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel= "stylesheet" href= "https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css" >
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+    <!-- Link to your CSS -->
+    <link rel="stylesheet" href="../css/service.css">
+    <link rel="icon" type="image/png" href="../assets/images/logo.png">
+</head>
+      
+<body>
+
+<!-- First Navigation Bar ------------------------------------------------------------------------------------->
+<nav id="first-nav">
+    <div class="contact-info">
+        <div class="contact-item">
+            <i class="la la-envelope"></i>
+            <span>sales@toplifeinvestments.org</span>
+        </div>
+        <div class="contact-item">
+            <a href="tel:+260964729745">
+                <i class="la la-phone"></i>
+                <span>+260966120659 (Lusaka)</span>
+            </a>
+            <button id="toggle-phone" class="toggle-btn">
+              <i class="las la-angle-down"></i>
+          </button>
+        </div>
+        <div class="contact-item hidden" id="hidden-phone">
+          <a href="tel:+260964729745">
+              <i class="la la-phone"></i>
+              <span>+260964729745 (Kitwe)</span>
+          </a>
+      </div>
+    </div>
+    <div class="social-links">
+        <a href="https://web.facebook.com/ToplifeZambia" target="_blank">
+            <i class="lab la-facebook-square"></i>
+        </a>
+    </div>
+  </nav>
+    
+<!-- Second Navigation Bar --------------------------------------------------------------------------------------->
+<nav id="second-nav">
+    <div class="logo">
+        <a href="/">
+            <img src="/assets/images/logo-trans-com.png" alt="Company Logo" class="logo-img">
+        </a>
+    </div>
+    
+    <ul id="menu-list">
+        <li><a href="/">Home</a></li>
+        <li><a href="/about">About us</a></li>
+        <li><a href="/#services" class="active">Services</a></li>
+        <li><a href="/projects">Projects</a></li>
+        <li><a href="/contact">Contact</a></li>
+        <li><a href="/faq">FAQ</a></li>
+    </ul>
+    <div class="menu-icon">
+        <i class="las la-bars" onclick="toggleMenu()"></i>
+    </div>
+</nav>
+
+<!-- Page title --------------------------------------------------------------------------------------->
+<section class="page-title">
+    <div class="page-title-bg"></div>
+    <div class="container">
+        <div class="title-content">
+            <h1>Civil Works</h1>
+            <div class="breadcrumb">
+                <a href="/">Home</a>
+                <span class="separator"><i class="las la-angle-right"></i></span>
+                <span class="current-page">Civil Works</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Service title --------------------------------------------------------------------------------------->
+<div class="service-main-container">
+    <!-- Left Sidebar - Services -->
+    <div class="service-sidebar">
+        <h2 class="service-sidebar-title"><span>Our Services</span></h2>
+        <ul class="service-list">
+            <li class="service-item">
+                <a href="/services/service-1" class="service-link">
+                    <span class="service-name">Aluminium Works</span>
+                    <i class="las la-external-link-square-alt service-icon"></i>
+                </a>
+            </li>
+            <li class="service-item">
+                <a href="/services/service-2" class="service-link">
+                    <span class="service-name">Security Burglars</span>
+                    <i class="las la-external-link-square-alt service-icon"></i>
+                </a>
+            </li>
+            <li class="service-item">
+                <a href="/services/service-3" class="service-link">
+                    <span class="service-name">Roller Shutter Doors</span>
+                    <i class="las la-external-link-square-alt service-icon"></i>
+                </a>
+            </li>
+            <li class="service-item">
+                <a href="/services/service-4" class="service-link">
+                    <span class="service-name">Stainless Steel Handrails</span>
+                    <i class="las la-external-link-square-alt service-icon"></i>
+                </a>
+            </li>
+            <li class="service-item">
+                <a href="/services/service-5" class="service-link">
+                    <span class="service-name">Garage Doors</span>
+                    <i class="las la-external-link-square-alt service-icon"></i>
+                </a>
+            </li>
+        </ul>
+  
+        <!-- New CTA Section -->
+        <div class="service-cta-container">
+            <h3 class="service-cta-heading">Need Custom Solutions?</h3>
+            <p class="service-cta-text">Contact our team for personalized service and expert consultation on your next project.</p>
+            <button onclick="location.href='/contact'" class="service-cta-button">Get in Touch</button>
+        </div>
+    </div>
+  
+    <!-- Right Content Area -->
+    <div class="service-content-area">
+        <div class="service-header">
+            <h1 class="service-title">Civil Works</h1>
+            <div class="service-image">
+                <img src="https://www.shutterstock.com/image-photo/construction-worker-yellow-hard-hat-600nw-2518265201.jpg" alt="Aluminium Works">
+            </div>
+        </div>
+  
+        <div class="service-overview">
+            <h2>Service Overview</h2>
+            <p>We deliver professional civil works solutions, including road construction, drainage systems, foundations, and structural developments. Our team ensures high-quality workmanship, durability, and compliance with industry standards to support safe and long-lasting infrastructure.</p>
+            
+        </div>
+    </div>
+  </div>
+  
+  <!-- Full-width Features Section (moved outside the right container) -->
+  <div class="service-features">
+    <h2>Key Features</h2>
+    <div class="service-features-grid">
+        <div class="service-feature-item">
+            <i class="las la-check-circle service-feature-icon"></i>
+            <div class="service-feature-content">
+                <h3>Premium Materials</h3>
+                <p>We use only the highest quality materials that is built to last for decades.</p>
+            </div>
+        </div>
+        <div class="service-feature-item">
+            <i class="las la-check-circle service-feature-icon"></i>
+            <div class="service-feature-content">
+                <h3>Expert Craftsmen</h3>
+                <p>Our team has over 7 years of combined experience.</p>
+            </div>
+        </div>
+        <div class="service-feature-item">
+            <i class="las la-check-circle service-feature-icon"></i>
+            <div class="service-feature-content">
+                <h3>Custom Design</h3>
+                <p>Each project is uniquely designed to match your specific needs and preferences.</p>
+            </div>
+        </div>
+        <div class="service-feature-item">
+            <i class="las la-check-circle service-feature-icon"></i>
+            <div class="service-feature-content">
+                <h3>Fast Installation</h3>
+                <p>Our professional installation team ensures minimal disruption to your schedule.</p>
+            </div>
+        </div>
+    </div>
+  </div>
+  
+
+<!-- Footer --------------------------------------------------------------------------------------->
+<footer>
+    <div class="footer-container">
+        <div class="footer-rows">
+              <div class="footer-col" id="company">
+                  <a href="/">
+                    <img src="/assets/images/logo-trans-com.png" alt="" class="logo2">
+                  </a>
+                  <p>
+                    We are specialized in construction, make your business a brand.
+                    Try our premium services.
+                  </p>
+                  <div class="social">
+                    <a href="https://web.facebook.com/ToplifeZambia" target="_blank"><i class="lab la-facebook-square"></i></a>
+                  </div>
+              </div>
+
+
+              <div class="footer-col" id="f-services">
+                 <h3>Services</h3>
+                 <div class="links">
+                    <a href="/services/service-1">Aluminium Works</a>
+                    <a href="/services/service-2">Security Burglars</a>
+                    <a href="/services/service-3">Roller Shutter Doors</a>
+                    <a href="#services">View all</a>
+                 </div>
+              </div>
+
+              <div class="footer-col" id="useful-links">
+                 <h3>Links</h3>
+                 <div class="links">
+                    <a href="/faq">FAQ</a>
+                    <a href="#">Our Policy</a>
+                    <a href="#">Login</a>
+                 </div>
+              </div>
+
+              <div class="footer-col" id="contact">
+                  <h3>Contact</h3>
+                  <div class="contact-details">
+                    <i class="las la-map-marked"></i>
+                    <p>Plot 26008 ,off kwacha Road Olympia Lusaka 10101 Lusaka, Zambia</p>
+                  </div>
+                  <br>
+                  <br>
+                  <div class="contact-details">
+                    <i class="las la-phone"></i>
+                    <p>+260966120659</p>
+                  </div>
+              </div>
+        </div>
+    </div>
+ </footer>
+
+
+<script>
+
+/*============================== Navigation Bar | Toggle Feature ==========================================*/
+
+let menuList = document.getElementById("menu-list")
+    menuList.style.maxHeight = "0px";
+
+    function toggleMenu(){
+        if(menuList.style.maxHeight == "0px")
+        {
+            menuList.style.maxHeight = "300px";
+        }
+        else{
+            menuList.style.maxHeight = "0px";
+        }
+    }
+
+/*=========================================================================================================*/
+        
+</script>
+<script src="../js/external.js"></script>
+
+ <script async src='https://d2mpatx37cqexb.cloudfront.net/delightchat-whatsapp-widget/embeds/embed.min.js'></script>
+        <script>
+          var wa_btnSetting = {"btnColor":"#038886","ctaText":"","cornerRadius":40,"marginBottom":20,"marginLeft":20,"marginRight":20,"btnPosition":"right","whatsAppNumber":"260964729745","zIndex":999999,"btnColorScheme":"light"};
+          window.onload = () => {
+            _waEmbed(wa_btnSetting);
+          };
+        </script>   
+</body>
+</html>

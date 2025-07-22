@@ -1,0 +1,980 @@
+:root {
+    /* Font Families */
+    --font-primary: 'Poppins', sans-serif;
+    
+    /* Colors */
+    --color-main: #026c6b; /* Main theme color */
+    --color-primary: #866304; /* Primary theme color */
+    --color-white: #ffffff; /* White */
+    --color-black: #000000; /* Black */
+}
+
+
+* {
+    font-family: 'Poppins';
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+*::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+/*************************************** First (#1) Navigation ***************************************/
+
+#first-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  min-height: 35px;
+  box-sizing: border-box;
+  background-color: #026c6b;
+  color: white;
+  font-size: 0.75rem;
+  padding: 10px 10%; /* Horizontal padding to add spacing from the edges */
+  position: relative;
+  z-index: 10;
+}
+
+.contact-info {
+  display: flex;
+  gap: 20px; /* Space between email, phone */
+  flex-wrap: wrap;
+}
+
+.contact-item {
+  display: flex; /* Make the container a flex container */
+  align-items: center;
+}
+
+.contact-item i {
+  font-size: 20px; /* Base size for icons */
+  margin-right: 2px; /* Remove any additional margin if present */
+  line-height: 1; /* Space between icon and text */
+}
+
+.contact-item i.la-phone {
+  transform: translateY(2px); /* Fine-tune vertical alignment */
+}
+
+.contact-item span {
+  font-size: 13px; /* Base size for span text */
+}
+
+.contact-item a {
+  color: white;
+  text-decoration: none;
+}
+
+.social-links a i {
+  font-size: 30px; /* Facebook icon size */
+  color: #ffffff;
+}
+
+.social-links {
+  display: flex;
+  justify-content: flex-end;
+}
+
+#first-nav .contact-item span, #first-nav .social-links a {
+  vertical-align: middle; /* Aligning text and icons vertically */
+}
+
+/* Hide toggle button and ensure both numbers are visible by default */
+.toggle-btn {
+display: none;
+background: none;
+border: none;
+color: white;
+font-size: 18px;
+cursor: pointer;
+margin-left: 5px;
+transition: opacity 0.7s ease, max-height 0.3s ease;
+}
+
+@media (max-width: 815px) {
+  .contact-info {
+      gap: 7px;
+  }
+}
+
+/* Responsive behavior - only applies at 480px and below */
+@media (max-width: 503px) {
+.contact-info {
+    flex-direction: column;
+    gap: 5px;
+}
+
+.toggle-btn {
+    display: inline-block; /* Show the toggle button only on small screens */
+}
+
+#hidden-phone {
+    display: none; /* Hide second phone number by default */
+}
+}
+
+/*************************************** Second (#2) Navigation ***************************************/
+  
+#second-nav {
+  padding: 0 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #ffffff;
+  position: relative;
+  z-index: 5;
+  height: 84px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05); /* Subtle shadow for depth */
+}
+
+#menu-list {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  transition: all 0.3s ease;
+}
+
+#second-nav ul li {
+  list-style-type: none;
+}
+
+#second-nav ul li a {
+  text-decoration: none;
+  color: #000000;
+  font-weight: 500;
+  padding: 8px 0;
+  position: relative;
+  white-space: nowrap;
+  display: block;
+}
+
+/* Active and hover states with underline effect */
+#menu-list li a.active {
+  color: #866304;
+}
+
+#menu-list li a.active::after,
+#menu-list li a:hover::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #866304;
+  transform: scaleX(1);
+  transition: transform 0.3s ease;
+}
+
+#menu-list li a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #866304;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+#menu-list li a:hover {
+  color: #866304;
+}
+
+.menu-icon {
+  display: none;
+  cursor: pointer;
+  padding: 10px;
+  z-index: 10;
+}
+
+.menu-icon i {
+  color: #000000;
+  font-size: 30px;
+  transition: color 0.3s ease;
+}
+
+/************************* Logo Styling ***************************************/
+
+.logo {
+display: flex;
+align-items: center;
+}
+
+.logo-img {
+  position: relative;
+  width: 100%; 
+  max-width: 220px;
+  height: auto; 
+}
+
+#menu-list li a.active {
+  color: #866304; 
+}
+
+#menu-list li a {
+  text-decoration: none;
+  color: white;
+  transition: color 0.3s ease;
+}
+
+
+#menu-list li a:hover {
+  color: #866304; 
+}
+
+@media (max-width: 880px) and (min-width: 769px) {
+
+#second-nav ul {
+  gap: 30px;
+}
+
+}
+
+@media (max-width: 768px) {
+  
+  #second-nav ul {
+      position: absolute;
+      top: 70px;
+      left: 0;
+      right: 0;
+      flex-direction: column;
+      text-align: center;
+      background: #ffffff; /* Use your main color variable */
+      gap: 0;
+      overflow: hidden;
+  }
+
+  #second-nav ul li {
+      padding: 20px;
+      padding-top: 0;
+  }
+
+  .menu-icon {
+      display: block;
+  }
+
+  #menu-list {
+      transition: all 0.5s;
+  }
+}
+
+
+@media (max-width: 768px) {
+ 
+.menu-icon {
+    padding: 1% 9%;
+}
+
+#second-nav {
+    padding: 0
+}
+
+.logo-img {
+    max-width: 270px; /* Reduce size slightly on tablets */
+}
+}
+
+@media (max-width: 480px) {
+.logo-img {
+    max-width: 200px; /* Further reduce size on small mobile screens */
+}
+}
+
+/* Smaller desktop and large tablets */
+@media (max-width: 880px) {
+  #menu-list {
+      gap: 20px;
+  }
+  
+  #second-nav ul li a {
+      font-size: 14px;
+  }
+  
+  .logo-img {
+      max-width: 200px;
+  }
+}
+/* Page title Section styles *************************************************************************************/
+
+.page-title {
+  position: relative;
+  height: clamp(200px, 30vh, 400px); /* Responsive height based on viewport */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  overflow: hidden;
+}
+
+.page-title-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../assets/images/us.jpeg');
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.4); /* More modern approach than overlay */
+  transform: scale(1.05); /* Subtle zoom effect */
+  transition: transform 0.5s ease-out;
+}
+
+.page-title:hover .page-title-bg {
+  transform: scale(1); /* Subtle zoom-out effect on hover */
+}
+
+.title-container {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 30px;
+  z-index: 2;
+}
+
+.title-content {
+  text-align: center;
+  position: relative;
+}
+
+.title-content::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 3px;
+  background: #038886;
+  margin: 15px auto 20px;
+  border-radius: 2px;
+}
+
+.page-title h1 {
+  font-size: clamp(2rem, 5vw, 3.5rem); /* Fluid typography */
+  font-weight: 700;
+  margin: 0 0 15px;
+  color:#09908e;
+  
+  letter-spacing: 1px;
+}
+
+.breadcrumb {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: clamp(0.9rem, 2vw, 1.1rem);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.breadcrumb a {
+  color: white;
+  text-decoration: none;
+  font-weight: 400;
+  transition: color 0.3s ease;
+}
+
+.breadcrumb a:hover {
+  color: #038886;
+  text-decoration: none;
+}
+
+.breadcrumb .separator {
+  display: flex;
+  align-items: center;
+  margin: 0 10px;
+  opacity: 0.8;
+  font-size: 0.8em;
+}
+
+.breadcrumb .current-page {
+  color: #09908e;
+  font-weight: 500;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .page-title {
+      height: clamp(180px, 25vh, 300px);
+      margin-bottom: 40px;
+  }
+  
+  .title-content::after {
+      width: 60px;
+      margin: 10px auto 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-title {
+      height: clamp(150px, 20vh, 250px);
+      margin-bottom: 30px;
+  }
+  
+  .container {
+      padding: 0 20px;
+  }
+  
+  .title-content::after {
+      width: 50px;
+      margin: 8px auto 12px;
+  }
+  
+  .breadcrumb {
+      flex-wrap: wrap;
+  }
+}
+/* About Us Page styles ******************************************************************************/
+
+.about-us {
+    padding: 50px 0;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.about-us .about-container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 80px;
+}
+
+.about-us .about-container p{
+    text-align: justify   ;
+}
+
+.about-us .intro {
+    margin-bottom: 60px;
+}
+
+.about-us h2, .about-us h3, .about-us h4 {
+    color: #038886;
+}
+
+.meet-our-team {
+    padding: 60px 0;
+    text-align: center;
+}
+
+.meet-our-team h2 {
+    margin-bottom: 30px;
+}
+
+.about-us .mission-vision {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 40px;
+}
+
+.mission-vision {
+  gap: 25px;
+}
+
+.about-us .contact-us-btn {
+    margin-top: 20px;
+}
+
+.about-us .contact-btn {
+    display: inline-block;
+    padding: 15px 30px;
+    border: 3px solid #038886;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    background-color: #038886;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    
+}
+
+/* Flexbox Layout */
+.team-grid {
+    display: flex;
+    flex-wrap: wrap; /* Allows wrapping */
+    gap: 30px;
+    justify-content: flex-start; /* Ensures even spacing */
+}
+
+.team-member {
+    width: calc(33.33% - 20px); /* 3 per row */
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Ensure images are responsive */
+.team-member img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 80px;
+    margin-bottom: 10px;
+}
+
+.team-member h4 {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.team-grid .team-member p {
+    text-align: center;
+    font-size: 14px;
+    color: #555;
+}
+
+/* Ensures Mission and Vision stack when screen is small */
+@media (max-width: 768px) {
+    .about-us .mission-vision {
+        flex-direction: column; /* Stack items */
+        
+    }
+
+    .mission, .vision {
+        width: 100%; /* Full width for stacking */
+        margin-bottom: 30px; /* Space between stacked items */
+    }
+
+    .team-grid {
+      flex-direction: column;
+      gap: 20px;
+  }
+
+  .team-member {
+      width: 100%;
+      
+      margin: 0 auto;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .about-us .about-container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 30px;
+  }
+
+}
+
+@media (max-width: 900px) {
+
+  .about-us .about-container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+
+}
+
+
+
+/* FAQ Page styles ******************************************************************************/
+
+  .faq-container {
+    margin: 0 auto;
+    padding: 3rem;
+    width: 100%;
+    max-width: 48rem;
+  }
+
+  .faq-container h2 {
+    text-align: center;
+    margin-bottom: 15px;
+    color: #038886;
+  }
+  
+  .accordion .accordion-item {
+    border-bottom: 1px solid #e5e5e5;
+  }
+  
+  .accordion .accordion-item button[aria-expanded='true'] {
+    border-bottom: 1px solid #038886;
+  }
+  
+  .accordion button {
+    position: relative;
+    display: block;
+    text-align: left;
+    width: 100%;
+    padding: 1em 0;
+    color: #555;
+    font-size: 1.15rem;
+    font-weight: 400;
+    border: none;
+    background: none;
+    outline: none;
+  }
+  
+  .accordion button:hover,
+  .accordion button:focus {
+    cursor: pointer;
+    color: #038886;
+  }
+  
+  .accordion button:hover::after,
+  .accordion button:focus::after {
+    cursor: pointer;
+    color: #038886;
+    border: 1px solid #038886;
+  }
+  
+  .accordion .accordion-title {
+    padding: 1em 1.5em 1em 0;
+  }
+  
+  .accordion .icon {
+    display: inline-block;
+    position: absolute;
+    top: 18px;
+    right: 0;
+    width: 22px;
+    height: 22px;
+    border: 1px solid;
+    border-radius: 22px;
+  }
+  
+  .accordion .icon::before {
+    display: block;
+    position: absolute;
+    content: '';
+    top: 9px;
+    left: 5px;
+    width: 10px;
+    height: 2px;
+    background: currentColor;
+  }
+  
+  .accordion .icon::after {
+    display: block;
+    position: absolute;
+    content: '';
+    top: 5px;
+    left: 9px;
+    width: 2px;
+    height: 10px;
+    background: currentColor;
+  }
+  
+  .accordion button[aria-expanded='true'] {
+    color: #038886;
+  }
+  
+  .accordion button[aria-expanded='true'] .icon::after {
+    width: 0;
+  }
+  
+  .accordion button[aria-expanded='true'] + .accordion-content {
+    opacity: 1;
+    max-height: 9em;
+    transition: all 200ms linear;
+    will-change: opacity, max-height;
+  }
+  
+  .accordion .accordion-content {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: opacity 200ms linear, max-height 200ms linear;
+    will-change: opacity, max-height;
+  }
+  
+  .accordion .accordion-content p {
+    font-size: 1rem;
+    font-weight: 300;
+    margin: 2em 0;
+  }
+
+  @media (max-width: 768px) {
+    .accordion button {
+      font-size: 1rem; /* Adjust font size for smaller screens */
+    }
+
+    .accordion-item .accordion-content p {
+        font-size: 0.9rem; /* Smaller font size for tablets */
+      }
+  
+    .accordion-content {
+      max-height: auto; /* Adjust content visibility */
+    }
+
+  }
+  
+  @media (max-width: 480px) {
+   
+    .accordion button {
+      font-size: 0.9rem; /* Even smaller font size */
+      padding-right: 35px;
+    }
+
+    .accordion-item .accordion-content p {
+        font-size: 0.8rem; /* Even smaller font size for mobile phones */
+      }
+
+  }
+
+/* Reviews Section styles *************************************************************************************/
+.review-form-container {    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+   
+    padding: 30px;
+  }
+  
+  .review-form-container h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #038886;
+  }
+  
+  .review-form {
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    background-color: #f9f9f9;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .form-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  
+  .half-width {
+    flex: 1 1 45%; /* 45% width for half width elements */
+  }
+  
+  .full-width {
+    flex: 1 1 100%; /* Full width for elements that span the whole row */
+  }
+  
+  label {
+    font-size: 1rem;
+    color: #555;
+  }
+  
+  input, .review-textarea {
+    width: 100%;
+    padding: 0.8rem;
+    margin: 0.5rem 0;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  .review-textarea {
+    height: 150px;
+    resize: vertical;
+  }
+  
+  .submit-btn {
+    background-color: #038886;
+    color: #fff;
+    padding: 1rem;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    
+  }
+  
+  .submit-btn:hover {
+    background-color: #027b7a;
+  }
+  
+/* ✅ Responsive Styling (Now Matches Contact Form) */
+@media (max-width: 768px) {
+  .review-form-container {
+    padding: 20px;
+  }
+
+  .review-form {
+    padding: 1.5rem;
+  }
+
+  .review-form-container h2 {
+    font-size: 1.75rem;
+  }
+
+    input, textarea {
+        font-size: 0.95rem;
+      }
+
+  .submit-btn {
+    font-size: 0.95rem;
+    padding: 10px 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .review-form-container h2 {
+    font-size: 1.5rem;
+  }
+
+  .review-form {
+    padding: 1.2rem;
+  }
+
+  .submit-btn {
+    font-size: 1rem;
+    padding: 0.8rem;
+  }
+}
+  
+/* Contact Section styles *************************************************************************************/
+
+
+
+/* footer Section styles *************************************************************************************/
+
+footer{
+    background-color: #000000ff;
+    position: relative;
+    width: 100%;
+    min-height: 350px;
+    padding: 3rem 1rem;
+  }
+  
+  .footer-container {
+   max-width: 1140px;
+   margin: 0 auto;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+  
+  
+  }
+  .footer-rows {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+  }
+  
+  .footer-col{
+   min-width: 250px;
+   color:#f2f2f2f2;
+   font-family: poppins;
+   padding:0 2rem;
+  }
+  
+  .footer-col .logo2{
+   width: 240px;
+   
+  }
+  
+  .footer-col h3{
+   color: #038886;
+   margin-bottom: 20px;
+   position: relative;
+   cursor: pointer;
+  }
+  
+  .footer-col h3::after{
+   content: '';
+   height:3px;
+   width:0px;
+   background-color: #038886;
+   position: absolute;
+   bottom: 0;
+   left:0;
+   transition: 0.3s ease;
+  }
+  
+  .footer-col h3:hover::after{
+   width:30px
+  }
+  
+  .footer-col .social a i{
+   color: #038886;
+   margin-top:2rem;
+   margin-right: 5px;
+   font-size: 30px;
+   transition: 0.3s ease;
+  }
+  
+  .footer-col .social a i:hover{
+   transform: scale(1.5);
+   filter:grayscale(25);
+  }
+  
+  .footer-col .links a{
+   display: block;
+   text-decoration: none;
+   color:#f2f2f2;
+   margin-bottom: 5px;
+   position: relative;
+   transition: 0.3s ease;
+  }
+  
+  .footer-col .links a::before{
+   content:'';
+   height: 16px;
+   width:3px;
+   position: absolute;
+   top:5px;
+   left:-10px;
+   background-color: #038886;
+   transition: 0.5s ease;
+   opacity: 0;
+  }
+  
+  .footer-col .links a:hover::before{
+   opacity: 1;
+  }
+  
+  .footer-col .links a:hover{
+   transform: translateX(-8px);
+   color: #038886;
+  }
+  
+  .footer-col .contact-details{
+   display: inline-flex;
+   justify-content: space-between;
+  }
+  
+  .footer-col .contact-details i{
+   margin-right:15px;
+   display: block;
+   font-size: 30px;
+   color: #038886;
+  }
+  
+  /********** Responsive Design ********/
+  @media(max-width:900px)
+  {
+  .footer-rows{
+   flex-direction: column;
+  }
+  .footer-col{
+   width: 100%;
+   text-align: left;
+   margin-bottom: 25px;
+  }
+  }
+  @media(max-width:768px)
+  {
+  .footer-rows{
+   flex-direction: column;
+  }
+  .footer-col{
+   width: 100%;
+   text-align: left;
+   margin-bottom: 20px;
+  }
+  }

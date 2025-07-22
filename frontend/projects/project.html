@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Luxury Villa Construction | Toplife Construction Zambia</title>
+
+    <!-- Poppins font from Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Line Awesome icons CDN -->
+    <link rel= "stylesheet" href= "https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css" >
+
+    <!-- Font Awesome icons CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+
+    <!-- Link to CSS -->
+    <link rel="stylesheet" href="../css/project.css">
+
+    <!-- Link to browser tab logo -->
+    <link rel="icon" type="image/png" href="../assets/images/logo.png">
+
+</head>    
+<body>
+
+<!-- First Navigation Bar ------------------------------------------------------------------------------------->
+
+<nav id="first-nav">
+    <div class="contact-info">
+        <div class="contact-item">
+            <i class="la la-envelope"></i>
+            <span>admin@toplifeinvestments.org</span>
+        </div>
+        <div class="contact-item">
+            <a href="tel:+260964729745">
+                <i class="la la-phone"></i>
+                <span>+260966120659 (Lusaka)</span>
+            </a>
+            <button id="toggle-phone" class="toggle-btn">
+              <i class="las la-angle-down"></i>
+          </button>
+        </div>
+        <div class="contact-item hidden" id="hidden-phone">
+          <a href="tel:+260964729745">
+              <i class="la la-phone"></i>
+              <span>+260964729745 (Kitwe)</span>
+          </a>
+      </div>
+    </div>
+    <div class="social-links">
+        <a href="https://web.facebook.com/ToplifeZambia" target="_blank">
+            <i class="lab la-facebook-square"></i>
+        </a>
+    </div>
+</nav>
+    
+
+<!-- Second Navigation Bar --------------------------------------------------------------------------------------->
+
+<nav id="second-nav">
+    <div class="logo">
+        <a href="/">
+            <img src="/assets/images/logo-trans-com.png" alt="Company Logo" class="logo-img">
+        </a>
+    </div>
+    
+    <ul id="menu-list">
+        <li><a href="/">Home</a></li>
+        <li><a href="/about">About us</a></li>
+        <li><a href="/#services">Services</a></li>
+        <li><a href="/projects"class="active">Projects</a></li>
+        <li><a href="/contact">Contact</a></li>
+        <li><a href="/faq">FAQ</a></li>
+    </ul>
+    <div class="menu-icon">
+        <i class="las la-bars" onclick="toggleMenu()"></i>
+    </div>
+</nav>
+
+
+<!-- Dynamic Project Grid --------------------------------------------------------------------------------------->
+
+<div id="main-content"></div>
+
+
+<!-- Footer ----------------------------------------------------------------------------------------------------->
+
+<footer>
+    <div class="footer-container">
+        <div class="footer-rows">
+              <div class="footer-col" id="company">
+                  <a href="/">
+                    <img src="/assets/images/logo-trans-com.png" alt="" class="logo2">
+                  </a>
+                  <p>
+                    We are specialized in construction, make your business a brand.
+                    Try our premium services.
+                  </p>
+                  <div class="social">
+                    <a href="https://web.facebook.com/ToplifeZambia" target="_blank"><i class="lab la-facebook-square"></i></a>
+                  </div>
+              </div>
+
+
+              <div class="footer-col" id="f-services">
+                 <h3>Services</h3>
+                 <div class="links">
+                    <a href="/services/service-1">Aluminium Works</a>
+                    <a href="/services/service-2">Security Burglars</a>
+                    <a href="/services/service-3">Roller Shutter Doors</a>
+                    <a href="/#services">View all</a>
+                 </div>
+              </div>
+
+              <div class="footer-col" id="useful-links">
+                 <h3>Links</h3>
+                 <div class="links">
+                    <a href="/faq">FAQ</a>
+                    <a href="#">Our Policy</a>
+                    <a href="#">Login</a>
+                 </div>
+              </div>
+
+              <div class="footer-col" id="contact">
+                  <h3>Contact</h3>
+                  <div class="contact-details">
+                    <i class="las la-map-marked"></i>
+                    <p>Plot 26008 ,off kwacha Road Olympia Lusaka 10101 Lusaka, Zambia</p>
+                  </div>
+                  <br>
+                  <br>
+                  <div class="contact-details">
+                    <i class="las la-phone"></i>
+                    <p>+260966120659</p>
+                  </div>
+              </div>
+        </div>
+    </div>
+ </footer>
+
+ <script>
+
+/*============================== Navigation Bar | Toggle Feature ==========================================*/
+
+let menuList = document.getElementById("menu-list")
+    menuList.style.maxHeight = "0px";
+
+    function toggleMenu(){
+        if(menuList.style.maxHeight == "0px")
+        {
+            menuList.style.maxHeight = "300px";
+        }
+        else{
+            menuList.style.maxHeight = "0px";
+        }
+    }
+
+/*=========================================================================================================*/
+
+/*============================== Dynamic Project Details | Rendering Feature ==============================*/
+
+document.addEventListener("DOMContentLoaded", async () => {
+// Get project ID from URL
+const params = new URLSearchParams(window.location.search);
+const projectId = params.get("id");
+
+if (!projectId) {
+    console.error("No project ID found in URL.");
+    return;
+}
+
+try {
+    // Fetch project details
+    const response = await fetch(`https://toplife-construction.onrender.com/api/projects/${projectId}`);
+    const project = await response.json();
+    
+    // Build and insert page HTML
+    const mainContent = document.getElementById('main-content') || document.body;
+    mainContent.innerHTML = `
+    
+        <section class="page-title">
+            <div class="page-title-bg"></div>
+            <div class="title-container">
+                <div class="title-content">
+                    <h1>${project.projectName}</h1>
+                    <div class="breadcrumb">
+                        <a href="/">Home</a>
+                        <span class="separator"><i class="las la-angle-right"></i></span>
+                        <a href="/projects">Projects</a>
+                        <span class="separator"><i class="las la-angle-right"></i></span>
+                        <span class="current-page">${project.projectName}</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="project-container">
+            <!-- Project Header -->
+            <div class="project-header">
+                <div class="project-image">
+                    <img src="${project.mainImage}" alt="Project Image">
+                </div>
+                <div class="project-details">
+                    <h1>${project.projectName}</h1>
+                    <ul>
+                        <li><strong>Start Date:</strong> ${new Date(project.startDate).toLocaleDateString()}</li>
+                        <li><strong>End Date:</strong> ${new Date(project.endDate).toLocaleDateString()}</li>
+                        <li><strong>Services:</strong> ${project.services.join(", ")}</li>
+                        <li><strong>Project Type:</strong> ${project.projectType}</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Project Overview -->
+            <div class="project-overview">
+                <h1>Project Overview</h1>
+                <p>${project.overview}</p>
+            </div>
+
+            <!-- Image Carousel -->
+            <div class="project-carousel">
+                <div class="wrapper">
+                    <i id="left" class="fa-solid fa-angle-left"></i>
+                    <div class="carousel">
+                        ${project.projectImages.map(img => `
+                            <img src="${img}" alt="Project Image" draggable="false">
+                        `).join('')}
+                    </div>
+                    <i id="right" class="fa-solid fa-angle-right"></i>
+                </div>
+            </div>
+    `;
+    
+    // Reinitialize carousel after creating content
+    initializeCarousel();
+    
+} catch (error) {
+    console.error("Error fetching project details:", error);
+}
+});
+
+/*==================================================================================================================*/
+
+/*============================== Project Image Carousel (Slider) | Sliding Feature =================================*/
+
+
+// Function to initialize the carousel - copied from your external file
+function initializeCarousel() {
+const carousel = document.querySelector(".carousel");
+if (!carousel) return; // Safety check
+
+const firstImage = carousel.querySelector("img");
+if (!firstImage) return; // Safety check
+
+const arrowIcons = document.querySelectorAll(".wrapper i");
+
+// Variables for state management
+let isDragging = false;
+let startX = 0;
+let scrollStart = 0;
+let scrollDiff = 0;
+
+// Helper function to toggle arrow visibility
+const toggleArrowIcons = () => {
+    setTimeout(() => {
+        const maxScroll = Math.round(carousel.scrollWidth - carousel.clientWidth);
+        arrowIcons[0].style.display = carousel.scrollLeft <= 0 ? "none" : "block";
+        arrowIcons[1].style.display = Math.round(carousel.scrollLeft) >= maxScroll ? "none" : "block";
+    }, 100);
+};
+
+// Helper function to smoothly scroll the carousel
+const scrollCarousel = (direction) => {
+    const cardWidth = firstImage.clientWidth + 14; // Image width + margin
+    const maxScroll = carousel.scrollWidth - carousel.clientWidth;
+    const scrollAmount = direction === "right" ? cardWidth : -cardWidth;
+    carousel.scrollLeft = Math.min(Math.max(carousel.scrollLeft + scrollAmount, 0), maxScroll);
+    toggleArrowIcons();
+};
+
+// Event listeners for arrows
+arrowIcons.forEach((icon) => {
+    icon.addEventListener("click", () => {
+        const direction = icon.id === "right" ? "right" : "left";
+        scrollCarousel(direction);
+    });
+});
+
+// Automatic adjustment after dragging
+const autoCenterImage = () => {
+    const cardWidth = firstImage.clientWidth + 14;
+    const offset = carousel.scrollLeft % cardWidth;
+    const maxScroll = carousel.scrollWidth - carousel.clientWidth;
+    if (carousel.scrollLeft > 0 && carousel.scrollLeft < maxScroll) {
+        if (offset > cardWidth / 3) {
+            carousel.scrollLeft += cardWidth - offset; // Snap to the next image
+        } else {
+            carousel.scrollLeft -= offset; // Snap to the previous image
+        }
+    }
+    toggleArrowIcons();
+};
+
+// Dragging logic
+const startDragging = (event) => {
+    isDragging = true;
+    startX = event.pageX || event.touches?.[0].pageX;
+    scrollStart = carousel.scrollLeft;
+    carousel.classList.add("dragging");
+};
+
+const duringDrag = (event) => {
+    if (!isDragging) return;
+    const currentX = event.pageX || event.touches?.[0].pageX;
+    scrollDiff = currentX - startX;
+    carousel.scrollLeft = scrollStart - scrollDiff;
+};
+
+const stopDragging = () => {
+    if (!isDragging) return;
+    isDragging = false;
+    carousel.classList.remove("dragging");
+    if (Math.abs(scrollDiff) > 10) {
+        autoCenterImage();
+    }
+};
+
+// Attach event listeners
+carousel.addEventListener("mousedown", startDragging);
+carousel.addEventListener("touchstart", startDragging);
+document.addEventListener("mousemove", duringDrag);
+carousel.addEventListener("touchmove", duringDrag);
+document.addEventListener("mouseup", stopDragging);
+carousel.addEventListener("touchend", stopDragging);
+
+// Initial setup
+toggleArrowIcons();
+}
+
+/*==================================================================================================================*/
+
+</script>
+<script src="../js/external.js"></script>
+
+<script async src='https://d2mpatx37cqexb.cloudfront.net/delightchat-whatsapp-widget/embeds/embed.min.js'></script>
+        <script>
+          var wa_btnSetting = {"btnColor":"#038886","ctaText":"","cornerRadius":40,"marginBottom":20,"marginLeft":20,"marginRight":20,"btnPosition":"right","whatsAppNumber":"260964729745","zIndex":999999,"btnColorScheme":"light"};
+          window.onload = () => {
+            _waEmbed(wa_btnSetting);
+          };
+        </script>
+      
+</body>
+</html>

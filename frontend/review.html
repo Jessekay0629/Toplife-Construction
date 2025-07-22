@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Reviews | Toplife Construction Zambia</title>
+    <!-- Poppins font from Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel= "stylesheet" href= "https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css" >
+    <!-- Link to your CSS -->
+    <link rel="stylesheet" href="css/external.css">
+    <link rel="icon" type="image/png" href="assets/images/logo.png">
+</head>
+<body>
+
+<!-- First Navigation Bar ------------------------------------------------------------------------------------->
+    <nav id="first-nav">
+        <div class="contact-info">
+            <div class="contact-item">
+                <i class="la la-envelope"></i>
+                <span>toplifeprise@gmail.com</span>
+            </div>
+            <div class="contact-item">
+                <a href="tel:+260964729745">
+                    <i class="la la-phone"></i>
+                    <span>+260966120659 (Lusaka)</span>
+                </a>
+            </div>
+            <div class="contact-item">
+              <a href="tel:+260964729745">
+                  <i class="la la-phone"></i>
+                  <span>+260964729745 (Kitwe)</span>
+              </a>
+          </div>
+        </div>
+        <div class="social-links">
+            <a href="https://web.facebook.com/ToplifeZambia" target="_blank">
+                <i class="lab la-facebook-square"></i>
+            </a>
+        </div>
+    </nav>
+    
+<!-- Second Navigation Bar --------------------------------------------------------------------------------------->
+<nav id="second-nav">
+    <div class="logo">
+        <img src="assets/images/logo-trans-com.png" alt="Company Logo" class="logo-img">
+    </div>
+    
+    <ul id="menu-list">
+        <li><a href="">Home</a></li>
+        <li><a href="">About us</a></li>
+        <li><a href="">Services</a></li>
+        <li><a href="">Projects</a></li>
+        <li><a href="">Contact</a></li>
+        <li><a href="">FAQ</a></li>
+    </ul>
+    <div class="menu-icon">
+        <i class="las la-bars" onclick="toggleMenu()"></i>
+    </div>
+</nav>
+
+<!-- Page title --------------------------------------------------------------------------------------->
+<section class="page-title">
+    <div class="content">
+        <h1>Review</h1>
+        <div class="breadcrumb">
+            <a href="index.html">Home</a> / Review
+        </div>
+    </div>
+  </section>
+
+<!-- Review --------------------------------------------------------------------------------------->
+  <div class="review-form-container">
+    <h2>Leave a Review</h2>
+    <form class="review-form">
+      <div class="form-row">
+        <div class="half-width">
+          <label for="name"> Full Name</label>
+          <input type="text" id="name" name="name" required placeholder="Your Name">
+        </div>
+        <div class="half-width">
+          <label for="company-name">Company Name</label>
+          <input type="text" id="company-name" name="company-name" required placeholder="Company Name">
+        </div>
+      </div>
+  
+      <div class="form-row">
+        <div class="full-width">
+          <label for="title">Company title / Position</label>
+          <input type="text" id="title" name="title" required placeholder="Your Title or Position">
+        </div>
+      </div>
+  
+      <div class="form-row">
+        <div class="full-width">
+          <label for="review">Review</label>
+          <textarea id="review" class="review-textarea" name="review" required placeholder="Write your review here..."></textarea>
+        </div>
+      </div>
+  
+      <button type="submit" class="submit-btn">Submit</button>
+    </form>
+  </div>
+
+  <!-- Footer --------------------------------------------------------------------------------------->
+<footer>
+    <div class="footer-container">
+        <div class="footer-rows">
+              <div class="footer-col" id="company">
+                  <img src="assets/images/logo-trans-com.png" alt="" class="logo2">
+                  <p>
+                    We are specialized in designings, make your business a brand.
+                    Try our premium services.
+                  </p>
+                  <div class="social">
+                    <a href="https://www.facebook.com/zmGraycorp" target="_blank"><i class="lab la-facebook-square"></i></a>
+                  </div>
+              </div>
+
+
+              <div class="footer-col" id="services">
+                 <h3>Services</h3>
+                 <div class="links">
+                    <a href="#">Illustration</a>
+                    <a href="#">Creatives</a>
+                    <a href="#">Poster Design</a>
+                    <a href="#">Card Design</a>
+                 </div>
+              </div>
+
+              <div class="footer-col" id="useful-links">
+                 <h3>Links</h3>
+                 <div class="links">
+                    <a href="#">About</a>
+                    <a href="#">Services</a>
+                    <a href="#">Our Policy</a>
+                    <a href="#">Help</a>
+                 </div>
+              </div>
+
+              <div class="footer-col" id="contact">
+                  <h3>Contact</h3>
+                  <div class="contact-details">
+                    <i class="las la-map-marked"></i>
+                    <p>Plot 26008 ,off kwacha Road Olympia Lusaka 10101 Lusaka, Zambia</p>
+                  </div>
+                  <br>
+                  <br>
+                  <div class="contact-details">
+                    <i class="las la-phone"></i>
+                    <p>+260 977347542</p>
+                  </div>
+              </div>
+        </div>
+    </div>
+ </footer>
+
+
+  
+
+
+
+
+
+    <script>
+        let menuList = document.getElementById("menu-list")
+        menuList.style.maxHeight = "0px";
+
+        function toggleMenu(){
+            if(menuList.style.maxHeight == "0px")
+            {
+                menuList.style.maxHeight = "300px";
+            }
+            else{
+                menuList.style.maxHeight = "0px";
+            }
+        }
+        
+    </script>
+
+<script src="js/external.js"></script>
+</body>
+</html>
