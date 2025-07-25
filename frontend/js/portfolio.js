@@ -85,6 +85,24 @@
                 image: "./assets/portfolio/aluminium works/14.jpeg"
             },
             {
+                id: 14,
+                title: "Aluminium Works",
+                category: "aluminium",
+                image: "./assets/portfolio/aluminium works/15.jpeg"
+            },
+            {
+                id: 14,
+                title: "Aluminium Works",
+                category: "aluminium",
+                image: "./assets/portfolio/aluminium works/16.jpeg"
+            },
+            {
+                id: 14,
+                title: "Aluminium Works",
+                category: "aluminium",
+                image: "./assets/portfolio/aluminium works/17.jpeg"
+            },
+            {
                 id: 15,
                 title: "Security Burglars",
                 category: "security",
@@ -167,6 +185,36 @@
                 title: "Security Burglars",
                 category: "security",
                 image: "./assets/portfolio/security burglars/14.jpeg"
+            },
+            {
+                id: 28,
+                title: "Security Burglars",
+                category: "security",
+                image: "./assets/portfolio/security burglars/15.jpeg"
+            },
+            {
+                id: 28,
+                title: "Security Burglars",
+                category: "security",
+                image: "./assets/portfolio/security burglars/16.jpeg"
+            },
+            {
+                id: 28,
+                title: "Security Burglars",
+                category: "security",
+                image: "./assets/portfolio/security burglars/17.jpeg"
+            },
+            {
+                id: 28,
+                title: "Security Burglars",
+                category: "security",
+                image: "./assets/portfolio/security burglars/18.jpeg"
+            },
+            {
+                id: 28,
+                title: "Security Burglars",
+                category: "security",
+                image: "./assets/portfolio/security burglars/19.jpeg"
             },
             {
                 id: 29,
@@ -262,13 +310,19 @@
                 id: 44,
                 title: "Garage Doors",
                 category: "garage",
-                image: "./assets/portfolio/garage doors/1.jpeg"
+                image: "./assets/portfolio/garage doors/4.jpeg"
             },
             {
                 id: 45,
                 title: "Garage Doors",
                 category: "garage",
-                image: "./assets/portfolio/garage doors/1.jpeg"
+                image: "./assets/portfolio/garage doors/5.jpeg"
+            },
+            {
+                id: 45,
+                title: "Garage Doors",
+                category: "garage",
+                image: "./assets/portfolio/garage doors/6.jpeg"
             },
             {
                 id: 46,
@@ -425,7 +479,55 @@
                 title: "Office Partitions",
                 category: "office",
                 image: "./assets/portfolio/office partitions/19.jpeg"
-            }
+            },
+            {
+                id: 70,
+                title: "Carshades",
+                category: "carshade",
+                image: "./assets/portfolio/carshades/1.jpeg"
+            },
+            {
+                id: 70,
+                title: "Carshades",
+                category: "carshade",
+                image: "./assets/portfolio/carshades/2.jpeg"
+            },
+            {
+                id: 70,
+                title: "Carshades",
+                category: "carshade",
+                image: "./assets/portfolio/carshades/3.jpeg"
+            },
+            {
+                id: 70,
+                title: "Carshades",
+                category: "carshade",
+                image: "./assets/portfolio/carshades/4.jpeg"
+            },
+            {
+                id: 70,
+                title: "Carshades",
+                category: "carshade",
+                image: "./assets/portfolio/carshades/5.jpeg"
+            },
+            {
+                id: 70,
+                title: "Carshades",
+                category: "carshade",
+                image: "./assets/portfolio/carshades/6.jpeg"
+            },
+            {
+                id: 70,
+                title: "Carshades",
+                category: "carshade",
+                image: "./assets/portfolio/carshades/7.jpeg"
+            },
+            {
+                id: 70,
+                title: "Carshades",
+                category: "carshade",
+                image: "./assets/portfolio/carshades/8.jpeg"
+            },
 
         ];
 
@@ -441,6 +543,7 @@
             { key: 'roller-door', label: 'Roller Shutter Doors' },
             { key: 'carpentry', label: 'Carpentry Works' },
             { key: 'plumbing', label: 'Plumbing Works' },
+            { key: 'carshade', label: 'Carshades' }
         ];
 
         let displayedProjects = 6;
