@@ -929,7 +929,7 @@ align-items: center;
   align-items: center;
   justify-content: center;
   
-  background: url('../assets/images/con-2.jpg') center/cover no-repeat;
+  background: url('../assets/images/con-2.jpeg') center/cover no-repeat;
 }
 
 .reviews-section::before {
@@ -939,7 +939,7 @@ align-items: center;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5); /* Dark shadow effect */
+  background: rgba(0, 0, 0, 0.6); /* Dark shadow effect */
   z-index: 1; /* Ensure it's above the background but behind the text */
 }
 
