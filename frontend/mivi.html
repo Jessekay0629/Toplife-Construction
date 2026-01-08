@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ScreenshotAI - App Store Screenshots Generator</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "primary-dark": "#0b63c1",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#1c2630",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"],
+                        "body": ["Inter", "sans-serif"],
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-[#111418] dark:text-white font-display overflow-x-hidden antialiased selection:bg-primary/30">
+<div class="relative flex min-h-screen w-full flex-col">
+<!-- Navigation -->
+<header class="sticky top-0 z-50 w-full border-b border-[#f0f2f4] dark:border-white/10 bg-white/80 dark:bg-[#101922]/90 backdrop-blur-md">
+<div class="px-4 md:px-10 py-3 flex items-center justify-between max-w-[1280px] mx-auto w-full">
+<div class="flex items-center gap-2 text-[#111418] dark:text-white">
+<div class="size-8 rounded-lg bg-primary flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-[20px]">smartphone</span>
+</div>
+<h2 class="text-lg font-bold leading-tight tracking-[-0.015em]">ScreenshotAI</h2>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#features">Features</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#how-it-works">How it Works</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#pricing">Pricing</a>
+</nav>
+<div class="flex items-center gap-4">
+<a class="hidden sm:block text-sm font-medium hover:text-primary transition-colors" href="#">Log In</a>
+<button class="flex cursor-pointer items-center justify-center overflow-hidden rounded-lg h-9 px-4 bg-primary hover:bg-primary-dark transition-colors text-white text-sm font-bold shadow-sm shadow-primary/20">
+<span class="truncate">Get Started</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Hero Section -->
+<section class="relative flex flex-col items-center justify-center pt-16 pb-20 px-4 md:px-10 overflow-hidden">
+<!-- Background Elements -->
+<div class="absolute inset-0 -z-10 overflow-hidden">
+<div class="absolute -top-[30%] -left-[10%] h-[700px] w-[700px] rounded-full bg-primary/5 blur-[120px]"></div>
+<div class="absolute top-[20%] -right-[10%] h-[600px] w-[600px] rounded-full bg-purple-500/5 blur-[100px]"></div>
+</div>
+<div class="max-w-[960px] w-full flex flex-col items-center gap-8 text-center z-10">
+<div class="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-3 py-1">
+<span class="flex size-2 rounded-full bg-primary"></span>
+<span class="text-xs font-semibold text-primary uppercase tracking-wide">Version 2.0 Now Live</span>
+</div>
+<h1 class="text-4xl md:text-6xl font-black leading-[1.1] tracking-[-0.033em] text-[#111418] dark:text-white max-w-[800px]">
+                    Turn Boring Screenshots into <span class="text-primary">Downloads</span> in Seconds
+                </h1>
+<p class="text-lg md:text-xl text-[#617589] dark:text-gray-300 max-w-[640px] font-normal leading-relaxed">
+                    AI-generated layouts, persuasive copy, and premium device frames tailored for higher conversion rates. No design skills required.
+                </p>
+<!-- Input & CTA -->
+<div class="w-full max-w-[520px] mt-4">
+<form class="flex w-full flex-col sm:flex-row items-stretch rounded-xl shadow-lg shadow-gray-200/50 dark:shadow-none bg-white dark:bg-surface-dark p-2 border border-gray-200 dark:border-white/10 gap-2">
+<div class="flex flex-1 items-center px-3 gap-2">
+<span class="material-symbols-outlined text-gray-400">link</span>
+<input class="w-full bg-transparent border-none text-sm font-medium text-[#111418] dark:text-white placeholder:text-gray-400 focus:ring-0 p-0" placeholder="Paste your App Store URL..." type="url"/>
+</div>
+<button class="flex shrink-0 cursor-pointer items-center justify-center rounded-lg h-12 px-6 bg-primary hover:bg-primary-dark transition-colors text-white text-base font-bold">
+                            Generate Free
+                        </button>
+</form>
+<p class="mt-3 text-xs text-gray-500 dark:text-gray-400">No credit card required • 5 free generations included</p>
+</div>
+<!-- Hero Visual -->
+<div class="mt-16 w-full relative">
+<div class="relative w-full aspect-[16/9] md:aspect-[21/9] rounded-2xl overflow-hidden shadow-2xl border border-gray-200 dark:border-white/10 group">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Abstract gradient background showcasing stylized mobile app interface mockups floating in 3D space" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBxWxj0U90Xi8GVYV7LFD1MZ6Fix9FbGy9jnrmSAmDGsUk0BTTctZfQjK6E9ozELX8KKqLxV7TMDlbvJuuVVniKvOfZtvUGdMHeo_YDFYjChuYWmuWEftpKzyxoTc37tUWSJxeBa34v7vWXkiqL10O5BZpu60cvX7aohGB7JMsqDlL2b_lP7LEutOZEi0RInSRZs1-gdX3UZCpixtncw0KEFXepN9xs16glpTl9X1-irppoJS49UpU0W69nLBJWPWC6bUCX9YUcLA');">
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-background-light dark:from-background-dark via-transparent to-transparent opacity-80"></div>
+<!-- Floating Badges overlay -->
+<div class="absolute bottom-6 left-6 md:bottom-10 md:left-10 flex flex-col items-start gap-2">
+<div class="bg-white/90 dark:bg-black/80 backdrop-blur px-4 py-2 rounded-lg border border-white/20 shadow-lg flex items-center gap-2">
+<span class="material-symbols-outlined text-green-500 text-sm">check_circle</span>
+<span class="text-xs font-bold">Conversion Optimized</span>
+</div>
+<div class="bg-white/90 dark:bg-black/80 backdrop-blur px-4 py-2 rounded-lg border border-white/20 shadow-lg flex items-center gap-2">
+<span class="material-symbols-outlined text-blue-500 text-sm">devices</span>
+<span class="text-xs font-bold">iOS &amp; Android Ready</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Social Proof -->
+<section class="border-y border-[#f0f2f4] dark:border-white/5 bg-white dark:bg-surface-dark py-10">
+<div class="px-4 md:px-10 flex flex-col items-center gap-6 max-w-[1280px] mx-auto">
+<p class="text-sm font-semibold text-gray-500 uppercase tracking-wider">Trusted by 5,000+ indie developers</p>
+<div class="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
+<!-- Placeholder Logos using Text for simplicity, in a real scenario would be SVGs -->
+<div class="flex items-center gap-2 font-bold text-xl text-gray-400 dark:text-gray-500"><span class="material-symbols-outlined">rocket_launch</span> LaunchPad</div>
+<div class="flex items-center gap-2 font-bold text-xl text-gray-400 dark:text-gray-500"><span class="material-symbols-outlined">bolt</span> FastDev</div>
+<div class="flex items-center gap-2 font-bold text-xl text-gray-400 dark:text-gray-500"><span class="material-symbols-outlined">code_blocks</span> StackFlow</div>
+<div class="flex items-center gap-2 font-bold text-xl text-gray-400 dark:text-gray-500"><span class="material-symbols-outlined">terminal</span> IndieHacker</div>
+</div>
+</div>
+</section>
+<!-- How it Works -->
+<section class="py-20 px-4 md:px-10" id="how-it-works">
+<div class="max-w-[1280px] mx-auto">
+<div class="flex flex-col md:flex-row gap-12 items-start">
+<div class="flex flex-col gap-6 md:w-1/3 sticky top-24">
+<div class="flex flex-col gap-4">
+<h2 class="text-3xl md:text-4xl font-black leading-tight tracking-tight text-[#111418] dark:text-white">
+                                Stop struggling with Figma
+                            </h2>
+<p class="text-base text-gray-600 dark:text-gray-300 leading-relaxed">
+                                Our AI handles the heavy lifting of pixel-perfect alignment, device frames, and background gradients so you can focus on shipping code.
+                            </p>
+</div>
+<button class="flex w-fit cursor-pointer items-center justify-center rounded-lg h-12 px-6 bg-white dark:bg-surface-dark border border-gray-200 dark:border-white/10 hover:border-primary text-[#111418] dark:text-white text-base font-bold shadow-sm transition-all group">
+<span>See how it works</span>
+<span class="material-symbols-outlined ml-2 group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-4 md:w-2/3">
+<!-- Step 1 -->
+<div class="flex flex-col gap-4 rounded-xl border border-[#dbe0e6] dark:border-white/10 bg-white dark:bg-surface-dark p-6 shadow-sm hover:shadow-md transition-shadow">
+<div class="size-12 rounded-lg bg-blue-50 dark:bg-blue-900/20 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[28px]">upload_file</span>
+</div>
+<div class="flex flex-col gap-2">
+<h3 class="text-lg font-bold">1. Upload Screenshot</h3>
+<p class="text-sm text-gray-500 dark:text-gray-400 leading-normal">Simply drag and drop your raw app screenshots directly from your simulator.</p>
+</div>
+</div>
+<!-- Step 2 -->
+<div class="flex flex-col gap-4 rounded-xl border border-[#dbe0e6] dark:border-white/10 bg-white dark:bg-surface-dark p-6 shadow-sm hover:shadow-md transition-shadow">
+<div class="size-12 rounded-lg bg-purple-50 dark:bg-purple-900/20 flex items-center justify-center text-purple-600">
+<span class="material-symbols-outlined text-[28px]">auto_fix_high</span>
+</div>
+<div class="flex flex-col gap-2">
+<h3 class="text-lg font-bold">2. AI Enhancement</h3>
+<p class="text-sm text-gray-500 dark:text-gray-400 leading-normal">Our AI automatically adds device frames, trending backgrounds, and persuasive copy.</p>
+</div>
+</div>
+<!-- Step 3 -->
+<div class="flex flex-col gap-4 rounded-xl border border-[#dbe0e6] dark:border-white/10 bg-white dark:bg-surface-dark p-6 shadow-sm hover:shadow-md transition-shadow">
+<div class="size-12 rounded-lg bg-green-50 dark:bg-green-900/20 flex items-center justify-center text-green-600">
+<span class="material-symbols-outlined text-[28px]">download</span>
+</div>
+<div class="flex flex-col gap-2">
+<h3 class="text-lg font-bold">3. Export &amp; Publish</h3>
+<p class="text-sm text-gray-500 dark:text-gray-400 leading-normal">Download high-resolution assets in the correct sizes for App Store and Google Play.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Before vs After -->
+<section class="py-20 px-4 md:px-10 bg-white dark:bg-surface-dark border-t border-gray-100 dark:border-white/5">
+<div class="max-w-[1280px] mx-auto flex flex-col items-center gap-12">
+<div class="text-center max-w-2xl">
+<h2 class="text-3xl font-bold mb-4">Instant Professional Results</h2>
+<p class="text-gray-500 dark:text-gray-400">See the difference a few seconds of AI processing makes for your app's first impression.</p>
+</div>
+<div class="grid md:grid-cols-2 gap-8 w-full">
+<!-- Before Card -->
+<div class="relative group rounded-2xl overflow-hidden border border-gray-200 dark:border-white/10 bg-gray-50 dark:bg-black/20">
+<div class="absolute top-4 left-4 z-10 bg-gray-200 dark:bg-gray-800 text-gray-600 dark:text-gray-300 px-3 py-1 rounded text-xs font-bold uppercase tracking-wider">Before</div>
+<div class="p-12 flex items-center justify-center h-[400px] md:h-[500px]">
+<!-- Raw screenshot representation -->
+<img class="h-full object-contain shadow-md rounded border border-gray-300 dark:border-gray-700 opacity-80 grayscale-[0.5]" data-alt="Raw interface screenshot of a mobile app without any styling" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQ1pNU3wEyxHuvA_hQ299IjtuWHYBmwqlHikgpWOC8hf-LalFdSJPgHOmsprqfLiGbPJa77nLG2de40-d90zZLeg8K1LmkP6ZVIpWEveJCoKN3j9l3Ms8VLfe2RoVUsTrfkDxuSgfe_ClnH2wlRati5IG787220N0fpguuUfMPpPPkcrTIGvk1EANkRGQ9xV0TpAf7G6poMuuddRd-Y2niiN6H4MPUlDBBh-ajRlICPpt5bWYjpoYxr6l27VOmNqnKNMfdva3eQQ"/>
+</div>
+</div>
+<!-- After Card -->
+<div class="relative group rounded-2xl overflow-hidden border border-primary/20 bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-blue-900/10 dark:to-indigo-900/10">
+<div class="absolute top-4 left-4 z-10 bg-primary text-white px-3 py-1 rounded text-xs font-bold uppercase tracking-wider shadow-lg shadow-primary/30">After with AI</div>
+<div class="absolute top-4 right-4 z-10">
+<span class="material-symbols-outlined text-primary text-3xl animate-pulse">auto_awesome</span>
+</div>
+<div class="p-8 flex items-center justify-center h-[400px] md:h-[500px] relative">
+<!-- Styled screenshot representation -->
+<div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1557683316-973673baf926?q=80&amp;w=2029&amp;auto=format&amp;fit=crop')] bg-cover opacity-10" data-alt="Subtle abstract pattern background"></div>
+<!-- Phone Frame CSS Construction -->
+<div class="relative h-[90%] aspect-[9/19] bg-black rounded-[2.5rem] shadow-2xl border-[6px] border-gray-900 z-10 overflow-hidden transform group-hover:scale-[1.02] transition-transform duration-500">
+<div class="absolute top-0 w-full h-full bg-white dark:bg-gray-900">
+<img class="w-full h-full object-cover" data-alt="Polished mobile app interface inside a device frame" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBOnFkjT8UkAyt5xhJfVpvmw6Gr-9AcAGMfj5K-_wA2p0m4yphExKvaR3yQXGU8mdQxWTJIQyRWVQmnHFIIuB4uRgn3BixsUjNVpvNMJakwamgSBFrglr4lc3DeSWzh_9zt0M1Cs5F3x2TdX-UNQuDaLtDV8slncSngUouQH_U6a_qUf23xJnGOBhF1FEBijebqYdz-xSJi_D5a3hxsQvlaH9qeyUWhnfg-pNlAXZnKvVfAP3LWRtYouh6by1rTRT8hJXz6ePKInw"/>
+<!-- Overlay Text that AI would add -->
+<div class="absolute top-12 left-0 w-full text-center px-4">
+<h3 class="text-white font-black text-2xl drop-shadow-md">Track Your Progress</h3>
+</div>
+<div class="absolute bottom-0 w-full h-1/3 bg-gradient-to-t from-black/80 to-transparent"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Pricing -->
+<section class="py-20 px-4 md:px-10" id="pricing">
+<div class="max-w-[1280px] mx-auto flex flex-col items-center gap-12">
+<div class="text-center max-w-2xl">
+<h2 class="text-3xl font-bold mb-4">Simple, Transparent Pricing</h2>
+<p class="text-gray-500 dark:text-gray-400">Pay as you go or subscribe for unlimited access.</p>
+</div>
+<div class="grid md:grid-cols-2 gap-8 max-w-4xl w-full">
+<!-- Basic Plan -->
+<div class="flex flex-col p-8 rounded-2xl border border-gray-200 dark:border-white/10 bg-white dark:bg-surface-dark hover:border-gray-300 transition-colors">
+<h3 class="text-xl font-bold mb-2">Pay As You Go</h3>
+<p class="text-sm text-gray-500 mb-6">Perfect for solo founders launching one app.</p>
+<div class="flex items-baseline gap-1 mb-6">
+<span class="text-4xl font-black">$19</span>
+<span class="text-gray-500">/ app</span>
+</div>
+<button class="w-full py-3 rounded-lg border border-gray-200 dark:border-white/10 hover:bg-gray-50 dark:hover:bg-white/5 font-bold text-sm transition-colors mb-8">
+                            Get Credits
+                        </button>
+<ul class="flex flex-col gap-3 text-sm">
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-green-500 text-base">check</span> 10 Screenshot generations</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-green-500 text-base">check</span> All device frames included</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-green-500 text-base">check</span> 4K Export</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-gray-300 text-base">check</span> No watermark</li>
+</ul>
+</div>
+<!-- Pro Plan -->
+<div class="flex flex-col p-8 rounded-2xl border-2 border-primary bg-white dark:bg-surface-dark relative overflow-hidden">
+<div class="absolute top-0 right-0 bg-primary text-white text-xs font-bold px-3 py-1 rounded-bl-lg">POPULAR</div>
+<h3 class="text-xl font-bold mb-2">Pro Subscription</h3>
+<p class="text-sm text-gray-500 mb-6">For agencies and serial shippers.</p>
+<div class="flex items-baseline gap-1 mb-6">
+<span class="text-4xl font-black">$39</span>
+<span class="text-gray-500">/ month</span>
+</div>
+<button class="w-full py-3 rounded-lg bg-primary hover:bg-primary-dark text-white font-bold text-sm transition-colors mb-8 shadow-lg shadow-primary/25">
+                            Start Free Trial
+                        </button>
+<ul class="flex flex-col gap-3 text-sm">
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-base">check</span> <strong>Unlimited</strong> generations</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-base">check</span> Priority AI Processing</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-base">check</span> Save Brand Templates</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-base">check</span> API Access</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<!-- Final CTA -->
+<section class="py-20 px-4 md:px-10 bg-background-light dark:bg-background-dark">
+<div class="max-w-[1280px] mx-auto">
+<div class="bg-primary rounded-3xl p-8 md:p-16 flex flex-col md:flex-row items-center justify-between gap-8 text-white relative overflow-hidden">
+<!-- Background Pattern -->
+<div class="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
+<div class="flex flex-col gap-4 relative z-10 max-w-xl">
+<h2 class="text-3xl md:text-4xl font-black leading-tight">Ready to launch your app?</h2>
+<p class="text-blue-100 text-lg">Join 5,000+ developers creating stunning screenshots in minutes, not hours.</p>
+</div>
+<div class="relative z-10 flex flex-col sm:flex-row gap-4 w-full md:w-auto">
+<button class="bg-white text-primary hover:bg-blue-50 px-8 py-4 rounded-xl font-bold text-base transition-colors shadow-xl">
+                            Generate Screenshots
+                        </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-white dark:bg-surface-dark border-t border-gray-200 dark:border-white/10 pt-16 pb-8 px-4 md:px-10">
+<div class="max-w-[1280px] mx-auto flex flex-col gap-12">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+<div class="col-span-2 md:col-span-1 flex flex-col gap-4">
+<div class="flex items-center gap-2 text-[#111418] dark:text-white">
+<div class="size-6 rounded bg-primary flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-[14px]">smartphone</span>
+</div>
+<h2 class="text-base font-bold">ScreenshotAI</h2>
+</div>
+<p class="text-sm text-gray-500">Automating app store assets for the modern developer.</p>
+</div>
+<div class="flex flex-col gap-3">
+<h4 class="font-bold text-sm">Product</h4>
+<a class="text-sm text-gray-500 hover:text-primary" href="#">Features</a>
+<a class="text-sm text-gray-500 hover:text-primary" href="#">Pricing</a>
+<a class="text-sm text-gray-500 hover:text-primary" href="#">Showcase</a>
+</div>
+<div class="flex flex-col gap-3">
+<h4 class="font-bold text-sm">Resources</h4>
+<a class="text-sm text-gray-500 hover:text-primary" href="#">Blog</a>
+<a class="text-sm text-gray-500 hover:text-primary" href="#">Documentation</a>
+<a class="text-sm text-gray-500 hover:text-primary" href="#">Help Center</a>
+</div>
+<div class="flex flex-col gap-3">
+<h4 class="font-bold text-sm">Legal</h4>
+<a class="text-sm text-gray-500 hover:text-primary" href="#">Privacy Policy</a>
+<a class="text-sm text-gray-500 hover:text-primary" href="#">Terms of Service</a>
+</div>
+</div>
+<div class="flex flex-col md:flex-row justify-between items-center gap-4 pt-8 border-t border-gray-100 dark:border-white/5">
+<p class="text-xs text-gray-400">© 2023 ScreenshotAI Inc. All rights reserved.</p>
+<div class="flex gap-4">
+<a class="text-gray-400 hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined text-lg">public</span></a>
+<a class="text-gray-400 hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined text-lg">alternate_email</span></a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+</body></html>  
