@@ -1,329 +1,499 @@
 <!DOCTYPE html>
-
-<html class="light" lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>ScreenshotAI - App Store Screenshots Generator</title>
-<!-- Google Fonts -->
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
-<!-- Material Symbols -->
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<!-- Tailwind CSS -->
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<script id="tailwind-config">
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ScreenCraft - App Store Screenshot Generator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
         tailwind.config = {
-            darkMode: "class",
             theme: {
                 extend: {
                     colors: {
-                        "primary": "#137fec",
-                        "primary-dark": "#0b63c1",
-                        "background-light": "#f6f7f8",
-                        "background-dark": "#101922",
-                        "surface-light": "#ffffff",
-                        "surface-dark": "#1c2630",
+                        primary: '#137fec',
+                        primaryHover: '#0f6bc9',
+                        dark: '#0f172a',
+                        light: '#f8fafc',
                     },
                     fontFamily: {
-                        "display": ["Inter", "sans-serif"],
-                        "body": ["Inter", "sans-serif"],
+                        sans: ['Inter', 'sans-serif'],
                     },
-                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
-                },
-            },
+                    boxShadow: {
+                        'soft': '0 20px 40px -10px rgba(19, 127, 236, 0.15)',
+                        'card': '0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03)',
+                    }
+                }
+            }
         }
     </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        /* Custom Phone Mockup CSS */
+        .phone-mockup {
+            border: 12px solid #1e293b;
+            border-radius: 40px;
+            overflow: hidden;
+            position: relative;
+            background: white;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            transition: transform 0.3s ease;
+        }
+        
+        .phone-notch {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40%;
+            height: 24px;
+            background: #1e293b;
+            border-bottom-left-radius: 12px;
+            border-bottom-right-radius: 12px;
+            z-index: 10;
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, #f0f7ff 0%, #ffffff 100%);
+        }
+
+        .blob {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            z-index: 0;
+            opacity: 0.6;
+        }
+
+        .feature-icon-wrapper {
+            background: linear-gradient(135deg, rgba(19, 127, 236, 0.1) 0%, rgba(19, 127, 236, 0.05) 100%);
+        }
+    </style>
 </head>
-<body class="bg-background-light dark:bg-background-dark text-[#111418] dark:text-white font-display overflow-x-hidden antialiased selection:bg-primary/30">
-<div class="relative flex min-h-screen w-full flex-col">
-<!-- Navigation -->
-<header class="sticky top-0 z-50 w-full border-b border-[#f0f2f4] dark:border-white/10 bg-white/80 dark:bg-[#101922]/90 backdrop-blur-md">
-<div class="px-4 md:px-10 py-3 flex items-center justify-between max-w-[1280px] mx-auto w-full">
-<div class="flex items-center gap-2 text-[#111418] dark:text-white">
-<div class="size-8 rounded-lg bg-primary flex items-center justify-center text-white">
-<span class="material-symbols-outlined text-[20px]">smartphone</span>
-</div>
-<h2 class="text-lg font-bold leading-tight tracking-[-0.015em]">ScreenshotAI</h2>
-</div>
-<nav class="hidden md:flex items-center gap-8">
-<a class="text-sm font-medium hover:text-primary transition-colors" href="#features">Features</a>
-<a class="text-sm font-medium hover:text-primary transition-colors" href="#how-it-works">How it Works</a>
-<a class="text-sm font-medium hover:text-primary transition-colors" href="#pricing">Pricing</a>
-</nav>
-<div class="flex items-center gap-4">
-<a class="hidden sm:block text-sm font-medium hover:text-primary transition-colors" href="#">Log In</a>
-<button class="flex cursor-pointer items-center justify-center overflow-hidden rounded-lg h-9 px-4 bg-primary hover:bg-primary-dark transition-colors text-white text-sm font-bold shadow-sm shadow-primary/20">
-<span class="truncate">Get Started</span>
-</button>
-</div>
-</div>
-</header>
-<!-- Hero Section -->
-<section class="relative flex flex-col items-center justify-center pt-16 pb-20 px-4 md:px-10 overflow-hidden">
-<!-- Background Elements -->
-<div class="absolute inset-0 -z-10 overflow-hidden">
-<div class="absolute -top-[30%] -left-[10%] h-[700px] w-[700px] rounded-full bg-primary/5 blur-[120px]"></div>
-<div class="absolute top-[20%] -right-[10%] h-[600px] w-[600px] rounded-full bg-purple-500/5 blur-[100px]"></div>
-</div>
-<div class="max-w-[960px] w-full flex flex-col items-center gap-8 text-center z-10">
-<div class="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-3 py-1">
-<span class="flex size-2 rounded-full bg-primary"></span>
-<span class="text-xs font-semibold text-primary uppercase tracking-wide">Version 2.0 Now Live</span>
-</div>
-<h1 class="text-4xl md:text-6xl font-black leading-[1.1] tracking-[-0.033em] text-[#111418] dark:text-white max-w-[800px]">
-                    Turn Boring Screenshots into <span class="text-primary">Downloads</span> in Seconds
+<body class="bg-white text-slate-800 overflow-x-hidden">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-slate-100 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer">
+                    <div class="w-8 h-8 rounded-lg bg-primary flex items-center justify-center text-white">
+                        <i class="fa-solid fa-layer-group"></i>
+                    </div>
+                    <span class="font-bold text-xl tracking-tight text-dark">ScreenCraft</span>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#features" class="text-sm font-medium text-slate-600 hover:text-primary transition-colors">Features</a>
+                    <a href="#templates" class="text-sm font-medium text-slate-600 hover:text-primary transition-colors">Templates</a>
+                    <a href="#pricing" class="text-sm font-medium text-slate-600 hover:text-primary transition-colors">Pricing</a>
+                    <a href="#" class="text-sm font-medium text-slate-600 hover:text-primary transition-colors">Log In</a>
+                    <a href="#" class="bg-primary hover:bg-primaryHover text-white px-5 py-2.5 rounded-full text-sm font-semibold transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5">Start for Free</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-slate-600 hover:text-dark focus:outline-none">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-100 absolute w-full">
+            <div class="px-4 pt-2 pb-6 space-y-1 shadow-lg">
+                <a href="#features" class="block px-3 py-3 text-base font-medium text-slate-600 hover:text-primary hover:bg-slate-50 rounded-md">Features</a>
+                <a href="#templates" class="block px-3 py-3 text-base font-medium text-slate-600 hover:text-primary hover:bg-slate-50 rounded-md">Templates</a>
+                <a href="#pricing" class="block px-3 py-3 text-base font-medium text-slate-600 hover:text-primary hover:bg-slate-50 rounded-md">Pricing</a>
+                <div class="pt-4 flex flex-col gap-3">
+                    <a href="#" class="w-full text-center text-slate-600 font-medium py-2">Log In</a>
+                    <a href="#" class="w-full text-center bg-primary text-white font-semibold py-3 rounded-lg shadow-sm">Get Started</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden gradient-bg">
+        <!-- Background Blobs -->
+        <div class="blob bg-blue-200 w-96 h-96 top-0 left-0 -translate-x-1/2 -translate-y-1/2"></div>
+        <div class="blob bg-indigo-100 w-[500px] h-[500px] bottom-0 right-0 translate-x-1/3 translate-y-1/3"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 text-primary text-xs font-semibold uppercase tracking-wide mb-6 animate-fade-in-up">
+                    <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+                    v2.0 is now live
+                </div>
+                <h1 class="text-4xl md:text-6xl font-extrabold text-dark tracking-tight leading-tight mb-6">
+                    Turn boring screenshots into <span class="text-primary bg-clip-text">downloads</span>.
                 </h1>
-<p class="text-lg md:text-xl text-[#617589] dark:text-gray-300 max-w-[640px] font-normal leading-relaxed">
-                    AI-generated layouts, persuasive copy, and premium device frames tailored for higher conversion rates. No design skills required.
+                <p class="text-lg md:text-xl text-slate-600 mb-10 leading-relaxed">
+                    Create professional App Store and Play Store panoramic screenshots in minutes. No design skills required.
                 </p>
-<!-- Input & CTA -->
-<div class="w-full max-w-[520px] mt-4">
-<form class="flex w-full flex-col sm:flex-row items-stretch rounded-xl shadow-lg shadow-gray-200/50 dark:shadow-none bg-white dark:bg-surface-dark p-2 border border-gray-200 dark:border-white/10 gap-2">
-<div class="flex flex-1 items-center px-3 gap-2">
-<span class="material-symbols-outlined text-gray-400">link</span>
-<input class="w-full bg-transparent border-none text-sm font-medium text-[#111418] dark:text-white placeholder:text-gray-400 focus:ring-0 p-0" placeholder="Paste your App Store URL..." type="url"/>
-</div>
-<button class="flex shrink-0 cursor-pointer items-center justify-center rounded-lg h-12 px-6 bg-primary hover:bg-primary-dark transition-colors text-white text-base font-bold">
-                            Generate Free
-                        </button>
-</form>
-<p class="mt-3 text-xs text-gray-500 dark:text-gray-400">No credit card required • 5 free generations included</p>
-</div>
-<!-- Hero Visual -->
-<div class="mt-16 w-full relative">
-<div class="relative w-full aspect-[16/9] md:aspect-[21/9] rounded-2xl overflow-hidden shadow-2xl border border-gray-200 dark:border-white/10 group">
-<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Abstract gradient background showcasing stylized mobile app interface mockups floating in 3D space" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBxWxj0U90Xi8GVYV7LFD1MZ6Fix9FbGy9jnrmSAmDGsUk0BTTctZfQjK6E9ozELX8KKqLxV7TMDlbvJuuVVniKvOfZtvUGdMHeo_YDFYjChuYWmuWEftpKzyxoTc37tUWSJxeBa34v7vWXkiqL10O5BZpu60cvX7aohGB7JMsqDlL2b_lP7LEutOZEi0RInSRZs1-gdX3UZCpixtncw0KEFXepN9xs16glpTl9X1-irppoJS49UpU0W69nLBJWPWC6bUCX9YUcLA');">
-</div>
-<div class="absolute inset-0 bg-gradient-to-t from-background-light dark:from-background-dark via-transparent to-transparent opacity-80"></div>
-<!-- Floating Badges overlay -->
-<div class="absolute bottom-6 left-6 md:bottom-10 md:left-10 flex flex-col items-start gap-2">
-<div class="bg-white/90 dark:bg-black/80 backdrop-blur px-4 py-2 rounded-lg border border-white/20 shadow-lg flex items-center gap-2">
-<span class="material-symbols-outlined text-green-500 text-sm">check_circle</span>
-<span class="text-xs font-bold">Conversion Optimized</span>
-</div>
-<div class="bg-white/90 dark:bg-black/80 backdrop-blur px-4 py-2 rounded-lg border border-white/20 shadow-lg flex items-center gap-2">
-<span class="material-symbols-outlined text-blue-500 text-sm">devices</span>
-<span class="text-xs font-bold">iOS &amp; Android Ready</span>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- Social Proof -->
-<section class="border-y border-[#f0f2f4] dark:border-white/5 bg-white dark:bg-surface-dark py-10">
-<div class="px-4 md:px-10 flex flex-col items-center gap-6 max-w-[1280px] mx-auto">
-<p class="text-sm font-semibold text-gray-500 uppercase tracking-wider">Trusted by 5,000+ indie developers</p>
-<div class="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
-<!-- Placeholder Logos using Text for simplicity, in a real scenario would be SVGs -->
-<div class="flex items-center gap-2 font-bold text-xl text-gray-400 dark:text-gray-500"><span class="material-symbols-outlined">rocket_launch</span> LaunchPad</div>
-<div class="flex items-center gap-2 font-bold text-xl text-gray-400 dark:text-gray-500"><span class="material-symbols-outlined">bolt</span> FastDev</div>
-<div class="flex items-center gap-2 font-bold text-xl text-gray-400 dark:text-gray-500"><span class="material-symbols-outlined">code_blocks</span> StackFlow</div>
-<div class="flex items-center gap-2 font-bold text-xl text-gray-400 dark:text-gray-500"><span class="material-symbols-outlined">terminal</span> IndieHacker</div>
-</div>
-</div>
-</section>
-<!-- How it Works -->
-<section class="py-20 px-4 md:px-10" id="how-it-works">
-<div class="max-w-[1280px] mx-auto">
-<div class="flex flex-col md:flex-row gap-12 items-start">
-<div class="flex flex-col gap-6 md:w-1/3 sticky top-24">
-<div class="flex flex-col gap-4">
-<h2 class="text-3xl md:text-4xl font-black leading-tight tracking-tight text-[#111418] dark:text-white">
-                                Stop struggling with Figma
-                            </h2>
-<p class="text-base text-gray-600 dark:text-gray-300 leading-relaxed">
-                                Our AI handles the heavy lifting of pixel-perfect alignment, device frames, and background gradients so you can focus on shipping code.
-                            </p>
-</div>
-<button class="flex w-fit cursor-pointer items-center justify-center rounded-lg h-12 px-6 bg-white dark:bg-surface-dark border border-gray-200 dark:border-white/10 hover:border-primary text-[#111418] dark:text-white text-base font-bold shadow-sm transition-all group">
-<span>See how it works</span>
-<span class="material-symbols-outlined ml-2 group-hover:translate-x-1 transition-transform">arrow_forward</span>
-</button>
-</div>
-<div class="grid grid-cols-1 sm:grid-cols-3 gap-4 md:w-2/3">
-<!-- Step 1 -->
-<div class="flex flex-col gap-4 rounded-xl border border-[#dbe0e6] dark:border-white/10 bg-white dark:bg-surface-dark p-6 shadow-sm hover:shadow-md transition-shadow">
-<div class="size-12 rounded-lg bg-blue-50 dark:bg-blue-900/20 flex items-center justify-center text-primary">
-<span class="material-symbols-outlined text-[28px]">upload_file</span>
-</div>
-<div class="flex flex-col gap-2">
-<h3 class="text-lg font-bold">1. Upload Screenshot</h3>
-<p class="text-sm text-gray-500 dark:text-gray-400 leading-normal">Simply drag and drop your raw app screenshots directly from your simulator.</p>
-</div>
-</div>
-<!-- Step 2 -->
-<div class="flex flex-col gap-4 rounded-xl border border-[#dbe0e6] dark:border-white/10 bg-white dark:bg-surface-dark p-6 shadow-sm hover:shadow-md transition-shadow">
-<div class="size-12 rounded-lg bg-purple-50 dark:bg-purple-900/20 flex items-center justify-center text-purple-600">
-<span class="material-symbols-outlined text-[28px]">auto_fix_high</span>
-</div>
-<div class="flex flex-col gap-2">
-<h3 class="text-lg font-bold">2. AI Enhancement</h3>
-<p class="text-sm text-gray-500 dark:text-gray-400 leading-normal">Our AI automatically adds device frames, trending backgrounds, and persuasive copy.</p>
-</div>
-</div>
-<!-- Step 3 -->
-<div class="flex flex-col gap-4 rounded-xl border border-[#dbe0e6] dark:border-white/10 bg-white dark:bg-surface-dark p-6 shadow-sm hover:shadow-md transition-shadow">
-<div class="size-12 rounded-lg bg-green-50 dark:bg-green-900/20 flex items-center justify-center text-green-600">
-<span class="material-symbols-outlined text-[28px]">download</span>
-</div>
-<div class="flex flex-col gap-2">
-<h3 class="text-lg font-bold">3. Export &amp; Publish</h3>
-<p class="text-sm text-gray-500 dark:text-gray-400 leading-normal">Download high-resolution assets in the correct sizes for App Store and Google Play.</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- Before vs After -->
-<section class="py-20 px-4 md:px-10 bg-white dark:bg-surface-dark border-t border-gray-100 dark:border-white/5">
-<div class="max-w-[1280px] mx-auto flex flex-col items-center gap-12">
-<div class="text-center max-w-2xl">
-<h2 class="text-3xl font-bold mb-4">Instant Professional Results</h2>
-<p class="text-gray-500 dark:text-gray-400">See the difference a few seconds of AI processing makes for your app's first impression.</p>
-</div>
-<div class="grid md:grid-cols-2 gap-8 w-full">
-<!-- Before Card -->
-<div class="relative group rounded-2xl overflow-hidden border border-gray-200 dark:border-white/10 bg-gray-50 dark:bg-black/20">
-<div class="absolute top-4 left-4 z-10 bg-gray-200 dark:bg-gray-800 text-gray-600 dark:text-gray-300 px-3 py-1 rounded text-xs font-bold uppercase tracking-wider">Before</div>
-<div class="p-12 flex items-center justify-center h-[400px] md:h-[500px]">
-<!-- Raw screenshot representation -->
-<img class="h-full object-contain shadow-md rounded border border-gray-300 dark:border-gray-700 opacity-80 grayscale-[0.5]" data-alt="Raw interface screenshot of a mobile app without any styling" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQ1pNU3wEyxHuvA_hQ299IjtuWHYBmwqlHikgpWOC8hf-LalFdSJPgHOmsprqfLiGbPJa77nLG2de40-d90zZLeg8K1LmkP6ZVIpWEveJCoKN3j9l3Ms8VLfe2RoVUsTrfkDxuSgfe_ClnH2wlRati5IG787220N0fpguuUfMPpPPkcrTIGvk1EANkRGQ9xV0TpAf7G6poMuuddRd-Y2niiN6H4MPUlDBBh-ajRlICPpt5bWYjpoYxr6l27VOmNqnKNMfdva3eQQ"/>
-</div>
-</div>
-<!-- After Card -->
-<div class="relative group rounded-2xl overflow-hidden border border-primary/20 bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-blue-900/10 dark:to-indigo-900/10">
-<div class="absolute top-4 left-4 z-10 bg-primary text-white px-3 py-1 rounded text-xs font-bold uppercase tracking-wider shadow-lg shadow-primary/30">After with AI</div>
-<div class="absolute top-4 right-4 z-10">
-<span class="material-symbols-outlined text-primary text-3xl animate-pulse">auto_awesome</span>
-</div>
-<div class="p-8 flex items-center justify-center h-[400px] md:h-[500px] relative">
-<!-- Styled screenshot representation -->
-<div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1557683316-973673baf926?q=80&amp;w=2029&amp;auto=format&amp;fit=crop')] bg-cover opacity-10" data-alt="Subtle abstract pattern background"></div>
-<!-- Phone Frame CSS Construction -->
-<div class="relative h-[90%] aspect-[9/19] bg-black rounded-[2.5rem] shadow-2xl border-[6px] border-gray-900 z-10 overflow-hidden transform group-hover:scale-[1.02] transition-transform duration-500">
-<div class="absolute top-0 w-full h-full bg-white dark:bg-gray-900">
-<img class="w-full h-full object-cover" data-alt="Polished mobile app interface inside a device frame" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBOnFkjT8UkAyt5xhJfVpvmw6Gr-9AcAGMfj5K-_wA2p0m4yphExKvaR3yQXGU8mdQxWTJIQyRWVQmnHFIIuB4uRgn3BixsUjNVpvNMJakwamgSBFrglr4lc3DeSWzh_9zt0M1Cs5F3x2TdX-UNQuDaLtDV8slncSngUouQH_U6a_qUf23xJnGOBhF1FEBijebqYdz-xSJi_D5a3hxsQvlaH9qeyUWhnfg-pNlAXZnKvVfAP3LWRtYouh6by1rTRT8hJXz6ePKInw"/>
-<!-- Overlay Text that AI would add -->
-<div class="absolute top-12 left-0 w-full text-center px-4">
-<h3 class="text-white font-black text-2xl drop-shadow-md">Track Your Progress</h3>
-</div>
-<div class="absolute bottom-0 w-full h-1/3 bg-gradient-to-t from-black/80 to-transparent"></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- Pricing -->
-<section class="py-20 px-4 md:px-10" id="pricing">
-<div class="max-w-[1280px] mx-auto flex flex-col items-center gap-12">
-<div class="text-center max-w-2xl">
-<h2 class="text-3xl font-bold mb-4">Simple, Transparent Pricing</h2>
-<p class="text-gray-500 dark:text-gray-400">Pay as you go or subscribe for unlimited access.</p>
-</div>
-<div class="grid md:grid-cols-2 gap-8 max-w-4xl w-full">
-<!-- Basic Plan -->
-<div class="flex flex-col p-8 rounded-2xl border border-gray-200 dark:border-white/10 bg-white dark:bg-surface-dark hover:border-gray-300 transition-colors">
-<h3 class="text-xl font-bold mb-2">Pay As You Go</h3>
-<p class="text-sm text-gray-500 mb-6">Perfect for solo founders launching one app.</p>
-<div class="flex items-baseline gap-1 mb-6">
-<span class="text-4xl font-black">$19</span>
-<span class="text-gray-500">/ app</span>
-</div>
-<button class="w-full py-3 rounded-lg border border-gray-200 dark:border-white/10 hover:bg-gray-50 dark:hover:bg-white/5 font-bold text-sm transition-colors mb-8">
-                            Get Credits
-                        </button>
-<ul class="flex flex-col gap-3 text-sm">
-<li class="flex items-center gap-2"><span class="material-symbols-outlined text-green-500 text-base">check</span> 10 Screenshot generations</li>
-<li class="flex items-center gap-2"><span class="material-symbols-outlined text-green-500 text-base">check</span> All device frames included</li>
-<li class="flex items-center gap-2"><span class="material-symbols-outlined text-green-500 text-base">check</span> 4K Export</li>
-<li class="flex items-center gap-2"><span class="material-symbols-outlined text-gray-300 text-base">check</span> No watermark</li>
-</ul>
-</div>
-<!-- Pro Plan -->
-<div class="flex flex-col p-8 rounded-2xl border-2 border-primary bg-white dark:bg-surface-dark relative overflow-hidden">
-<div class="absolute top-0 right-0 bg-primary text-white text-xs font-bold px-3 py-1 rounded-bl-lg">POPULAR</div>
-<h3 class="text-xl font-bold mb-2">Pro Subscription</h3>
-<p class="text-sm text-gray-500 mb-6">For agencies and serial shippers.</p>
-<div class="flex items-baseline gap-1 mb-6">
-<span class="text-4xl font-black">$39</span>
-<span class="text-gray-500">/ month</span>
-</div>
-<button class="w-full py-3 rounded-lg bg-primary hover:bg-primary-dark text-white font-bold text-sm transition-colors mb-8 shadow-lg shadow-primary/25">
-                            Start Free Trial
-                        </button>
-<ul class="flex flex-col gap-3 text-sm">
-<li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-base">check</span> <strong>Unlimited</strong> generations</li>
-<li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-base">check</span> Priority AI Processing</li>
-<li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-base">check</span> Save Brand Templates</li>
-<li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-base">check</span> API Access</li>
-</ul>
-</div>
-</div>
-</div>
-</section>
-<!-- Final CTA -->
-<section class="py-20 px-4 md:px-10 bg-background-light dark:bg-background-dark">
-<div class="max-w-[1280px] mx-auto">
-<div class="bg-primary rounded-3xl p-8 md:p-16 flex flex-col md:flex-row items-center justify-between gap-8 text-white relative overflow-hidden">
-<!-- Background Pattern -->
-<div class="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
-<div class="flex flex-col gap-4 relative z-10 max-w-xl">
-<h2 class="text-3xl md:text-4xl font-black leading-tight">Ready to launch your app?</h2>
-<p class="text-blue-100 text-lg">Join 5,000+ developers creating stunning screenshots in minutes, not hours.</p>
-</div>
-<div class="relative z-10 flex flex-col sm:flex-row gap-4 w-full md:w-auto">
-<button class="bg-white text-primary hover:bg-blue-50 px-8 py-4 rounded-xl font-bold text-base transition-colors shadow-xl">
-                            Generate Screenshots
-                        </button>
-</div>
-</div>
-</div>
-</section>
-<!-- Footer -->
-<footer class="bg-white dark:bg-surface-dark border-t border-gray-200 dark:border-white/10 pt-16 pb-8 px-4 md:px-10">
-<div class="max-w-[1280px] mx-auto flex flex-col gap-12">
-<div class="grid grid-cols-2 md:grid-cols-4 gap-8">
-<div class="col-span-2 md:col-span-1 flex flex-col gap-4">
-<div class="flex items-center gap-2 text-[#111418] dark:text-white">
-<div class="size-6 rounded bg-primary flex items-center justify-center text-white">
-<span class="material-symbols-outlined text-[14px]">smartphone</span>
-</div>
-<h2 class="text-base font-bold">ScreenshotAI</h2>
-</div>
-<p class="text-sm text-gray-500">Automating app store assets for the modern developer.</p>
-</div>
-<div class="flex flex-col gap-3">
-<h4 class="font-bold text-sm">Product</h4>
-<a class="text-sm text-gray-500 hover:text-primary" href="#">Features</a>
-<a class="text-sm text-gray-500 hover:text-primary" href="#">Pricing</a>
-<a class="text-sm text-gray-500 hover:text-primary" href="#">Showcase</a>
-</div>
-<div class="flex flex-col gap-3">
-<h4 class="font-bold text-sm">Resources</h4>
-<a class="text-sm text-gray-500 hover:text-primary" href="#">Blog</a>
-<a class="text-sm text-gray-500 hover:text-primary" href="#">Documentation</a>
-<a class="text-sm text-gray-500 hover:text-primary" href="#">Help Center</a>
-</div>
-<div class="flex flex-col gap-3">
-<h4 class="font-bold text-sm">Legal</h4>
-<a class="text-sm text-gray-500 hover:text-primary" href="#">Privacy Policy</a>
-<a class="text-sm text-gray-500 hover:text-primary" href="#">Terms of Service</a>
-</div>
-</div>
-<div class="flex flex-col md:flex-row justify-between items-center gap-4 pt-8 border-t border-gray-100 dark:border-white/5">
-<p class="text-xs text-gray-400">© 2023 ScreenshotAI Inc. All rights reserved.</p>
-<div class="flex gap-4">
-<a class="text-gray-400 hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined text-lg">public</span></a>
-<a class="text-gray-400 hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined text-lg">alternate_email</span></a>
-</div>
-</div>
-</div>
-</footer>
-</div>
-</body></html>  
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                    <button class="w-full sm:w-auto px-8 py-4 bg-primary hover:bg-primaryHover text-white rounded-full font-semibold text-lg shadow-soft transition-all transform hover:-translate-y-1 flex items-center justify-center gap-2">
+                        Create Screenshots
+                        <i class="fa-solid fa-arrow-right text-sm"></i>
+                    </button>
+                    <button class="w-full sm:w-auto px-8 py-4 bg-white hover:bg-gray-50 text-slate-700 border border-slate-200 rounded-full font-semibold text-lg transition-all flex items-center justify-center gap-2 group">
+                        <i class="fa-solid fa-play text-primary group-hover:scale-110 transition-transform"></i>
+                        Watch Demo
+                    </button>
+                </div>
+                <p class="mt-6 text-sm text-slate-400">No credit card required • 14-day free trial</p>
+            </div>
+
+            <!-- Hero Visual (CSS Mockups) -->
+            
+        </div>
+    </section>
+
+    <!-- Trusted By Section -->
+    <section class="py-10 border-y border-slate-100 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="text-sm font-medium text-slate-400 mb-8 uppercase tracking-widest">Trusted by 2,000+ App Developers</p>
+            <div class="flex flex-wrap justify-center items-center gap-10 md:gap-16 grayscale opacity-60">
+                <!-- Using FontAwesome as placeholder logos for simplicity -->
+                <div class="flex items-center gap-2 text-xl font-bold text-slate-600"><i class="fa-brands fa-aws text-2xl"></i> Amazon</div>
+                <div class="flex items-center gap-2 text-xl font-bold text-slate-600"><i class="fa-brands fa-stripe text-2xl"></i> Stripe</div>
+                <div class="flex items-center gap-2 text-xl font-bold text-slate-600"><i class="fa-brands fa-spotify text-2xl"></i> Spotify</div>
+                <div class="flex items-center gap-2 text-xl font-bold text-slate-600"><i class="fa-brands fa-google text-2xl"></i> Google</div>
+                <div class="flex items-center gap-2 text-xl font-bold text-slate-600"><i class="fa-brands fa-airbnb text-2xl"></i> Airbnb</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-24 bg-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-dark mb-4">Everything you need to launch</h2>
+                <p class="text-lg text-slate-600">Stop wasting hours in Photoshop. ScreenCraft gives you the tools to create high-converting assets instantly.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                <!-- Feature 1 -->
+                <div class="group p-8 rounded-3xl bg-white border border-slate-100 shadow-sm hover:shadow-card transition-all hover:-translate-y-1">
+                    <div class="w-14 h-14 rounded-2xl feature-icon-wrapper flex items-center justify-center text-primary text-2xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-3">Instant Layouts</h3>
+                    <p class="text-slate-600 leading-relaxed">Choose from dozens of proven templates. Just drag your screenshot in, and we handle the spacing, shadows, and backgrounds.</p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="group p-8 rounded-3xl bg-white border border-slate-100 shadow-sm hover:shadow-card transition-all hover:-translate-y-1">
+                    <div class="w-14 h-14 rounded-2xl feature-icon-wrapper flex items-center justify-center text-primary text-2xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-mobile-screen"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-3">Multi-Device Export</h3>
+                    <p class="text-slate-600 leading-relaxed">Design once, export for all sizes. We automatically resize for iPhone 6.5", 5.5", iPad, and Android device requirements.</p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="group p-8 rounded-3xl bg-white border border-slate-100 shadow-sm hover:shadow-card transition-all hover:-translate-y-1">
+                    <div class="w-14 h-14 rounded-2xl feature-icon-wrapper flex items-center justify-center text-primary text-2xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-globe"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-3">Localization Ready</h3>
+                    <p class="text-slate-600 leading-relaxed">Going global? Easily duplicate your project and translate captions for different languages in seconds.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works / Value Prop -->
+    <section class="py-24 bg-slate-50 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row items-center gap-16">
+                <!-- Left Content -->
+                <div class="w-full lg:w-1/2">
+                    <h2 class="text-3xl md:text-4xl font-bold text-dark mb-6">Designed for speed and conversion.</h2>
+                    <div class="space-y-8">
+                        <div class="flex gap-4">
+                            <div class="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center font-bold">1</div>
+                            <div>
+                                <h4 class="text-lg font-bold text-dark mb-1">Upload Screenshots</h4>
+                                <p class="text-slate-600">Drag and drop your raw simulator screenshots directly into the browser.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="flex-shrink-0 w-8 h-8 rounded-full bg-white border-2 border-primary text-primary flex items-center justify-center font-bold">2</div>
+                            <div>
+                                <h4 class="text-lg font-bold text-dark mb-1">Customize Style</h4>
+                                <p class="text-slate-600">Tweak backgrounds, add device frames (iPhone 15, Pixel, etc.), and write catchy captions.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="flex-shrink-0 w-8 h-8 rounded-full bg-white border-2 border-primary text-primary flex items-center justify-center font-bold">3</div>
+                            <div>
+                                <h4 class="text-lg font-bold text-dark mb-1">Export & Publish</h4>
+                                <p class="text-slate-600">Download high-res PNGs or JPEGs ready for App Store Connect and Google Play Console.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-10">
+                        <a href="#" class="text-primary font-semibold hover:text-primaryHover inline-flex items-center gap-2 group">
+                            Check out our templates 
+                            <i class="fa-solid fa-arrow-right transform group-hover:translate-x-1 transition-transform"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Visual -->
+                <div class="w-full lg:w-1/2 relative">
+                    <div class="absolute inset-0 bg-primary/5 rounded-3xl transform rotate-3"></div>
+                    <div class="bg-white rounded-3xl shadow-xl p-6 relative border border-slate-100">
+                        <!-- UI Mockup of the Editor -->
+                        <div class="flex items-center justify-between mb-6 border-b border-slate-100 pb-4">
+                            <div class="flex gap-2">
+                                <div class="w-3 h-3 rounded-full bg-red-400"></div>
+                                <div class="w-3 h-3 rounded-full bg-yellow-400"></div>
+                                <div class="w-3 h-3 rounded-full bg-green-400"></div>
+                            </div>
+                            <div class="text-xs font-semibold text-slate-400">Editor Preview</div>
+                        </div>
+                        <div class="flex gap-4">
+                            <!-- Sidebar -->
+                            <div class="w-1/4 space-y-3">
+                                <div class="h-8 bg-slate-100 rounded w-full"></div>
+                                <div class="h-8 bg-slate-100 rounded w-3/4"></div>
+                                <div class="h-8 bg-slate-100 rounded w-5/6"></div>
+                                <div class="mt-4 h-24 bg-blue-50 border border-blue-100 rounded w-full flex items-center justify-center text-primary text-xs font-medium">Background Color</div>
+                            </div>
+                            <!-- Canvas -->
+                            <div class="w-3/4 bg-slate-100 rounded-xl h-64 flex items-center justify-center relative overflow-hidden">
+                                <div class="absolute inset-0 grid grid-cols-6 grid-rows-6">
+                                    <div class="border-r border-slate-200/50"></div><div class="border-r border-slate-200/50"></div><div class="border-r border-slate-200/50"></div><div class="border-r border-slate-200/50"></div><div class="border-r border-slate-200/50"></div><div></div>
+                                </div>
+                                <div class="w-32 h-56 bg-white border-4 border-slate-800 rounded-2xl shadow-lg relative z-10 flex flex-col items-center pt-4">
+                                    <div class="w-8 h-1 bg-slate-200 rounded-full mb-2"></div>
+                                    <div class="w-full h-full bg-blue-100 rounded-b-lg"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-dark mb-4">Simple, transparent pricing</h2>
+                <p class="text-lg text-slate-600">Start for free, upgrade when you need more power.</p>
+                
+                <div class="mt-8 inline-flex bg-slate-100 p-1 rounded-full relative">
+                    <div class="w-1/2 h-full absolute left-0 bg-white rounded-full shadow-sm transition-all"></div>
+                    <button class="px-6 py-2 rounded-full text-sm font-semibold text-dark relative z-10">Monthly</button>
+                    <button class="px-6 py-2 rounded-full text-sm font-medium text-slate-500 relative z-10">Yearly <span class="text-xs text-primary font-bold">-20%</span></button>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <!-- Free Tier -->
+                <div class="p-8 rounded-3xl border border-slate-200 bg-white hover:border-slate-300 transition-colors">
+                    <h3 class="text-xl font-bold text-dark">Starter</h3>
+                    <div class="mt-4 mb-6">
+                        <span class="text-4xl font-extrabold text-dark">$0</span>
+                        <span class="text-slate-500">/mo</span>
+                    </div>
+                    <p class="text-slate-500 text-sm mb-6">Perfect for indie developers launching their first app.</p>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center gap-3 text-sm text-slate-600">
+                            <i class="fa-solid fa-check text-primary"></i> 3 Projects
+                        </li>
+                        <li class="flex items-center gap-3 text-sm text-slate-600">
+                            <i class="fa-solid fa-check text-primary"></i> Basic Templates
+                        </li>
+                        <li class="flex items-center gap-3 text-sm text-slate-600">
+                            <i class="fa-solid fa-check text-primary"></i> 720p Export
+                        </li>
+                    </ul>
+                    <a href="#" class="block w-full py-3 px-4 bg-slate-50 hover:bg-slate-100 text-slate-700 font-semibold text-center rounded-xl transition-colors">Get Started</a>
+                </div>
+
+                <!-- Pro Tier (Highlighted) -->
+                <div class="p-8 rounded-3xl border-2 border-primary bg-white relative shadow-soft transform md:-translate-y-4">
+                    <div class="absolute top-0 right-0 bg-primary text-white text-xs font-bold px-3 py-1 rounded-bl-xl rounded-tr-xl">POPULAR</div>
+                    <h3 class="text-xl font-bold text-dark">Pro</h3>
+                    <div class="mt-4 mb-6">
+                        <span class="text-4xl font-extrabold text-dark">$19</span>
+                        <span class="text-slate-500">/mo</span>
+                    </div>
+                    <p class="text-slate-500 text-sm mb-6">For serious developers who want the best conversion rates.</p>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center gap-3 text-sm text-slate-600">
+                            <i class="fa-solid fa-check text-primary"></i> Unlimited Projects
+                        </li>
+                        <li class="flex items-center gap-3 text-sm text-slate-600">
+                            <i class="fa-solid fa-check text-primary"></i> Premium Device Frames
+                        </li>
+                        <li class="flex items-center gap-3 text-sm text-slate-600">
+                            <i class="fa-solid fa-check text-primary"></i> 4K Export
+                        </li>
+                        <li class="flex items-center gap-3 text-sm text-slate-600">
+                            <i class="fa-solid fa-check text-primary"></i> Custom Fonts
+                        </li>
+                    </ul>
+                    <a href="#" class="block w-full py-3 px-4 bg-primary hover:bg-primaryHover text-white font-semibold text-center rounded-xl shadow-md transition-colors">Start Free Trial</a>
+                </div>
+
+                <!-- Agency Tier -->
+                <div class="p-8 rounded-3xl border border-slate-200 bg-white hover:border-slate-300 transition-colors">
+                    <h3 class="text-xl font-bold text-dark">Agency</h3>
+                    <div class="mt-4 mb-6">
+                        <span class="text-4xl font-extrabold text-dark">$49</span>
+                        <span class="text-slate-500">/mo</span>
+                    </div>
+                    <p class="text-slate-500 text-sm mb-6">Manage multiple clients and localization at scale.</p>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center gap-3 text-sm text-slate-600">
+                            <i class="fa-solid fa-check text-primary"></i> Everything in Pro
+                        </li>
+                        <li class="flex items-center gap-3 text-sm text-slate-600">
+                            <i class="fa-solid fa-check text-primary"></i> Team Collaboration
+                        </li>
+                        <li class="flex items-center gap-3 text-sm text-slate-600">
+                            <i class="fa-solid fa-check text-primary"></i> Translation API
+                        </li>
+                    </ul>
+                    <a href="#" class="block w-full py-3 px-4 bg-slate-50 hover:bg-slate-100 text-slate-700 font-semibold text-center rounded-xl transition-colors">Contact Sales</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-20">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-dark rounded-3xl p-10 md:p-16 text-center relative overflow-hidden">
+                <!-- Abstract BG shapes -->
+                <div class="absolute top-0 right-0 -mt-10 -mr-10 w-64 h-64 bg-primary/20 rounded-full blur-3xl"></div>
+                <div class="absolute bottom-0 left-0 -mb-10 -ml-10 w-64 h-64 bg-blue-600/20 rounded-full blur-3xl"></div>
+                
+                <h2 class="text-3xl md:text-5xl font-bold text-white mb-6 relative z-10">Ready to boost your downloads?</h2>
+                <p class="text-slate-400 text-lg mb-10 max-w-2xl mx-auto relative z-10">Join thousands of developers creating beautiful screenshots with ScreenCraft today.</p>
+                
+                <div class="flex flex-col sm:flex-row gap-4 justify-center relative z-10">
+                    <button class="px-8 py-4 bg-primary hover:bg-primaryHover text-white rounded-full font-semibold text-lg transition-all shadow-lg hover:shadow-primary/50">
+                        Get Started for Free
+                    </button>
+                    <button class="px-8 py-4 bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white border border-white/20 rounded-full font-semibold text-lg transition-all">
+                        View Examples
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white pt-16 pb-8 border-t border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 mb-12">
+                <div class="col-span-2 lg:col-span-2">
+                    <div class="flex items-center gap-2 mb-4">
+                        <div class="w-8 h-8 rounded-lg bg-primary flex items-center justify-center text-white">
+                            <i class="fa-solid fa-layer-group"></i>
+                        </div>
+                        <span class="font-bold text-xl text-dark">ScreenCraft</span>
+                    </div>
+                    <p class="text-slate-500 text-sm leading-relaxed max-w-xs mb-6">
+                        Making app store optimization accessible to everyone. Designed with <i class="fa-solid fa-heart text-red-400 mx-1"></i> in San Francisco.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center text-slate-600 hover:bg-primary hover:text-white transition-colors"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center text-slate-600 hover:bg-primary hover:text-white transition-colors"><i class="fa-brands fa-github"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center text-slate-600 hover:bg-primary hover:text-white transition-colors"><i class="fa-brands fa-discord"></i></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold text-dark mb-4">Product</h4>
+                    <ul class="space-y-3 text-sm text-slate-500">
+                        <li><a href="#" class="hover:text-primary transition-colors">Templates</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">Device Frames</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">Pricing</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">Changelog</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-dark mb-4">Resources</h4>
+                    <ul class="space-y-3 text-sm text-slate-500">
+                        <li><a href="#" class="hover:text-primary transition-colors">Documentation</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">API Reference</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">Community</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">Blog</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-dark mb-4">Company</h4>
+                    <ul class="space-y-3 text-sm text-slate-500">
+                        <li><a href="#" class="hover:text-primary transition-colors">About</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">Careers</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">Legal</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="pt-8 border-t border-slate-100 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-sm text-slate-400">© 2024 ScreenCraft Inc. All rights reserved.</p>
+                <div class="flex gap-6 text-sm text-slate-400">
+                    <a href="#" class="hover:text-dark">Privacy Policy</a>
+                    <a href="#" class="hover:text-dark">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Sticky Navbar effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 20) {
+                navbar.classList.add('shadow-md');
+                navbar.classList.replace('bg-white/80', 'bg-white/95');
+            } else {
+                navbar.classList.remove('shadow-md');
+                navbar.classList.replace('bg-white/95', 'bg-white/80');
+            }
+        });
+
+        // Simple Smooth Scroll for Anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                menu.classList.add('hidden'); // Close mobile menu on click
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
