@@ -194,15 +194,32 @@ document.addEventListener("DOMContentLoaded", function () {
   const toggleBtn = document.getElementById("toggle-phone");
   const hiddenPhone = document.getElementById("hidden-phone");
 
-  toggleBtn.addEventListener("click", function () {
+  if (toggleBtn && hiddenPhone) {
+    toggleBtn.addEventListener("click", function () {
       if (hiddenPhone.style.display === "none" || hiddenPhone.style.display === "") {
-          hiddenPhone.style.display = "flex";
-          toggleBtn.innerHTML = '<i class="las la-angle-up"></i>';
+        hiddenPhone.style.display = "flex";
+        toggleBtn.innerHTML = '<i class="las la-angle-up"></i>';
       } else {
-          hiddenPhone.style.display = "none";
-          toggleBtn.innerHTML = '<i class="las la-angle-down"></i>';
+        hiddenPhone.style.display = "none";
+        toggleBtn.innerHTML = '<i class="las la-angle-down"></i>';
       }
-  });
+    });
+  }
+
+  const toggleEmailBtn = document.getElementById("toggle-email");
+  const hiddenEmail = document.getElementById("hidden-email");
+
+  if (toggleEmailBtn && hiddenEmail) {
+    toggleEmailBtn.addEventListener("click", function () {
+      if (hiddenEmail.style.display === "none" || hiddenEmail.style.display === "") {
+        hiddenEmail.style.display = "flex";
+        toggleEmailBtn.innerHTML = '<i class="las la-angle-up"></i>';
+      } else {
+        hiddenEmail.style.display = "none";
+        toggleEmailBtn.innerHTML = '<i class="las la-angle-down"></i>';
+      }
+    });
+  }
 });
 
 
