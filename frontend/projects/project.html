@@ -98,7 +98,7 @@
         <div class="footer-rows">
               <div class="footer-col" id="company">
                   <a href="/">
-                    <img src="/assets/images/logo-trans-com.png" alt="" class="logo2">
+                    <img alt="Toplife Construction Zambia logo" src="/assets/images/logo-trans-com.png" class="logo2">
                   </a>
                   <p>
                     We are specialized in construction, make your business a brand.
@@ -206,7 +206,7 @@ try {
             <!-- Project Header -->
             <div class="project-header">
                 <div class="project-image">
-                    <img src="${project.mainImage}" alt="Project Image">
+                    <img loading="lazy" decoding="async" src="${project.mainImage}" alt="Project Image">
                 </div>
                 <div class="project-details">
                     <h1>${project.projectName}</h1>
@@ -231,7 +231,7 @@ try {
                     <i id="left" class="fa-solid fa-angle-left"></i>
                     <div class="carousel">
                         ${project.projectImages.map(img => `
-                            <img src="${img}" alt="Project Image" draggable="false">
+                            <img loading="lazy" decoding="async" src="${img}" alt="Project Image" draggable="false">
                         `).join('')}
                     </div>
                     <i id="right" class="fa-solid fa-angle-right"></i>
